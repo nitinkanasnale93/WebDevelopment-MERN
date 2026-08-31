@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Textarea</title>
+</head>
+
+<body>
+
+    <h2>Feedback Form</h2>
+
+    <hr>
+
+    <form action="/server">
+
+        <p>
+            <label for="feedback">
+                Please give your valuable feedback:
+            </label>
+        </p>
+
+        <p>
+            <textarea
+                id="feedback"
+                name="feedback"
+                placeholder="Write your feedback here..."
+                rows="5"
+                cols="40"
+            ></textarea>
+        </p>
+
+        <button type="submit">Submit Feedback</button>
+
+    </form>
+
+</body>
+
+</html>

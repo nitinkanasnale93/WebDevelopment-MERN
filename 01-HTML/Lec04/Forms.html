@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms Practice</title>
+</head>
+
+<body>
+
+    <!-- Login Form -->
+    <h2>Login Form</h2>
+
+    <form action="/server">
+
+        <p>
+            <label for="username">
+                Enter your Username:
+            </label>
+
+            <br>
+
+            <input
+                type="text"
+                id="username"
+                name="username"
+                placeholder="Username"
+            >
+        </p>
+
+        <p>
+            <label for="password">
+                Enter your Password:
+            </label>
+
+            <br>
+
+            <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Password"
+            >
+        </p>
+
+        <button type="submit">Login</button>
+
+    </form>
+
+    <hr>
+
+    <!-- YouTube Search -->
+    <h2>YouTube Search</h2>
+
+    <form action="https://www.youtube.com/results">
+
+        <input
+            type="text"
+            name="search_query"
+            placeholder="Search on YouTube"
+        >
+
+        <button type="submit">Search</button>
+
+    </form>
+
+    <hr>
+
+    <!-- Google Search -->
+    <h2>Google Search</h2>
+
+    <form action="https://www.google.com/search">
+
+        <input
+            type="text"
+            name="q"
+            placeholder="Search on Google"
+        >
+
+        <button type="submit">Search</button>
+
+    </form>
+
+</body>
+
+</html>

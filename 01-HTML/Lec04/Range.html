@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Range Input</title>
+</head>
+
+<body>
+
+    <h2>Volume Control</h2>
+
+    <hr>
+
+    <form action="/server">
+
+        <p>
+            <label for="vol">
+                Select Your Volume:
+            </label>
+        </p>
+
+        <p>
+            <input
+                type="range"
+                id="vol"
+                name="vol"
+                min="0"
+                max="100"
+                step="10"
+            >
+        </p>
+
+        <br>
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+</body>
+
+</html>
