@@ -1,0 +1,45 @@
+h1{
+
+    text-align: center;
+
+    /* border: solid;
+    width: 50%; */
+
+    text-decoration: wavy red underline;
+    font-family: didot;
+
+}
+
+H3{
+
+    text-align: start;
+    /* text-decoration: pink line-through; */
+
+}
+
+p {
+
+    /* text-align: end; */
+    text-align: justify;
+
+    line-height: 2.0;
+
+    /* letter-spacing: 5px; */
+
+    font-size: 15px;
+
+}
+
+h2{
+
+    font-weight: 800;
+    text-decoration: double blue overline;
+    font-family: impact;
+
+}
+
+a{
+
+    text-decoration: none;
+
+}
