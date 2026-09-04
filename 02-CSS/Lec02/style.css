@@ -1,0 +1,221 @@
+/* ==================== !important ==================== */
+
+h3{ 
+    background-color: antiquewhite !important; 
+}
+
+
+/* ==================== Universal Selector ==================== */
+
+*{ 
+
+    font-family: "courier new"; 
+
+}
+
+
+/* ==================== Element Selector ==================== */
+
+h3{ 
+
+    color: purple; 
+
+}
+
+h1{ 
+
+    color: #b92b27; 
+
+}
+
+
+/*  
+h1, h3{ 
+
+    color: #b92b27; 
+
+} */
+
+
+/* ==================== ID Selector ==================== */
+
+#login{ 
+
+    background-color: white; 
+
+}
+
+#signup{ 
+
+    background-color: #b92b27; 
+
+    color: white; 
+
+}
+
+
+/* ==================== Class Selector ==================== */
+
+.upvote{ 
+
+    background-color: aqua; 
+
+}
+
+
+/* ==================== Descendant Selector ==================== */
+
+/* descendent selector  select immediate child element */
+
+.post a{ 
+
+    background-color: chartreuse; 
+
+    color: #fff; 
+
+}
+
+nav ul li a{ 
+
+    color: hotpink; 
+
+}
+
+
+/* ==================== Sibling Combinator ==================== */
+
+/* Sibling Combinator on same Level */
+
+p + h3{ 
+
+    text-decoration: underline; 
+
+}
+
+.upvote + button{ 
+
+    background-color:cornflowerblue; 
+
+}
+
+
+/* ==================== Child Combinator ==================== */
+
+div > input{ 
+
+    background-color: orange; 
+
+    color: blue; 
+
+}
+
+
+/* ==================== Attribute Selector ==================== */
+
+input[type= "text"]{ 
+
+    color: red; 
+
+}
+
+input[type= "password"]{ 
+
+    color: red; 
+
+}
+
+input[type] { 
+
+    background-color: ghostwhite; 
+
+}
+
+
+/* #myid p{ 
+
+    color: green; 
+
+} */
+
+div[id="myid"] p { 
+
+    color: #b92b27; 
+
+}
+
+
+/* ==================== Pseudo Class ==================== */
+
+button:hover{ 
+
+    background-color: black; 
+
+    color: #b92b27; 
+
+}
+
+h3:hover{ 
+
+    text-decoration: none; 
+
+}
+
+button:active{ 
+
+    background-color: hotpink; 
+
+}
+
+p:active{ 
+
+    font-weight: bold; 
+
+    color: blue; 
+
+}
+
+input[type="radio"]:checked+label{ 
+
+    color: red; 
+
+    font-weight: bold; 
+
+}
+
+div:nth-of-type(2n){ 
+
+    background-color: burlywood; 
+
+}
+
+
+/* ==================== Pseudo Element ==================== */
+
+h1::first-letter { 
+
+    color: pink; 
+
+}
+
+#myid::first-line{ 
+
+    color: darkgoldenrod; 
+
+}
+
+p::selection{ 
+
+    background-color: rgb(168, 247, 0); 
+
+}
+
+
+/* ==================== Same Element - Cascade Example ==================== */
+
+h3{ 
+    background-color: yellow; 
+} 
+
+h3{ 
+    background-color: orange; 
+}
