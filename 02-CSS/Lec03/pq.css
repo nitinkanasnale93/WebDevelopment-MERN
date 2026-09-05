@@ -1,0 +1,34 @@
+#outerdiv{
+    height: 200px;
+    width: 70px;
+    border: 2px solid black;
+    
+}
+
+#one{
+    height: 50px;
+    width: 50px;
+    border: 2px solid black;
+    margin: 10px;
+    border-radius: 300px;
+    background-color: red;
+    
+}
+
+#two{
+    height: 50px;
+    width: 50px;
+    border: 2px solid black;
+    margin: 10px;
+    border-radius: 300px;
+    background-color: yellow;
+}
+
+#three{
+    height: 50px;
+    width: 50px;
+    border: 2px solid black;
+    margin: 10px;
+    border-radius: 300px;
+    background-color: green;
+}
