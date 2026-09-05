@@ -1,0 +1,196 @@
+body {
+    margin: 0;
+    background-color: rgb(30, 30, 30);
+    color: rgb(245, 245, 240);
+    font-family: "Trebuchet MS", sans-serif;
+}
+
+/* Header */
+
+header {
+    padding: 20px 40px;
+    background-color: rgb(30, 30, 30);
+}
+
+header div h1 {
+    font-family: Georgia, serif;
+    font-size: 42px;
+    margin: 10px;
+    color: rgb(255, 244, 208);
+    text-align: left;
+}
+
+/* Navigation */
+
+nav {
+    background-color: transparent;
+    padding: 10px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li a {
+    color: rgb(245, 245, 240);
+    text-decoration: none;
+    font-size: 17px;
+}
+
+nav ul li a:hover {
+    color: rgb(177, 206, 231);
+}
+
+/* Home / Hero */
+
+#Home {
+    text-align: center;
+    padding: 20px 30px 60px;
+}
+
+#Home img {
+    width: 100%;
+    max-width: 1400px;
+    height: 600px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: none;
+}
+
+#Home h2 {
+    font-family: Georgia, serif;
+    font-size: 40px;
+    color: rgb(255, 244, 208);
+}
+
+#Home p {
+    color: rgb(190, 190, 190);
+    font-size: 18px;
+}
+
+/* About */
+
+#About {
+    padding: 60px 10%;
+    text-align: center;
+    background-color: rgb(35, 35, 35);
+}
+
+#About h2 {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    color: rgb(255, 244, 208);
+}
+
+#About p {
+    color: rgb(190, 190, 190);
+    line-height: 1.8;
+    font-size: 17px;
+}
+
+/* Movies */
+
+#Movies {
+    padding: 60px 30px;
+    background-color: rgb(30, 30, 30);
+}
+
+#Movies h2 {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    color: rgb(255, 244, 208);
+    margin-left: 20px;
+}
+
+#Movies div {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    overflow-x: auto;
+}
+
+#Movies img {
+    width: 200px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 3px solid rgb(157, 116, 116);
+    box-shadow: none;
+    transition: transform 0.3s;
+}
+
+#Movies img:hover {
+    transform: scale(1.08);
+}
+
+/* Achievements */
+
+#Achievements {
+    padding: 60px 10%;
+    background-color: rgb(35, 35, 35);
+}
+
+#Achievements h2 {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    color: rgb(255, 244, 208);
+}
+
+#Achievements ul {
+    line-height: 2.2;
+    color: rgb(190, 190, 190);
+}
+
+#Achievements ul li {
+    list-style-type: circle;
+}
+
+/* Contact */
+
+#Contact {
+    text-align: center;
+    padding: 60px;
+    background-color: rgb(30, 30, 30);
+}
+
+#Contact h2 {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    color: rgb(255, 244, 208);
+}
+
+#Contact input {
+    padding: 12px;
+    margin: 10px;
+    border: 2px solid rgb(177, 206, 231);
+    border-radius: 5px;
+}
+
+#Contact button {
+    padding: 12px 30px;
+    margin-top: 15px;
+    background-color: rgb(157, 116, 116);
+    color: rgb(255, 244, 208);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#Contact button:hover {
+    background-color: rgb(177, 206, 231);
+    color: rgb(30, 30, 30);
+}
+
+/* Footer */
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background-color: rgb(20, 20, 20);
+    color: rgb(160, 160, 160);
+}
