@@ -1,0 +1,41 @@
+section{
+    margin-top: 100px;
+}
+div{
+    height: 50px;
+    width: 200px;
+    text-align: center;
+    background-color: cadetblue;
+    border: 2px solid blach;
+    margin: 10px auto;
+}
+
+div:nth-of-type(2n) {
+    background-color: chocolate;
+}
+
+div:nth-of-type(3n){
+    background-color: crimson;
+}
+
+/* Transform */
+#one{
+    transform: rotate(-45deg);
+}
+
+#two{
+    transform: scale(0.5, 1);
+    /* transform: scaleX() do scale along x; */
+}
+
+#three{
+    transform: translateX(-100px);
+}
+
+#four{
+    transform: skew(25deg);
+}
+
+#five{
+    transform: rotate(30deg) translateX(150px);
+}

@@ -1,0 +1,11 @@
+div{
+    width: 500px;
+    height: 300px;
+    background-color: orange;
+    margin: 10px auto;
+    background-image: url(BMW.jpg);
+    /* background-size: contain; */
+    background-size: cover; 
+    /* background-size: auto; */
+    /* Splash for no copyright images */
+}

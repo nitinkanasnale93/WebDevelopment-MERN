@@ -1,0 +1,19 @@
+div{
+    height: 100px;
+    width: 100px;
+    background-color: aqua;
+    margin-top: 10px;
+    margin: 0 auto;
+    /* transition: 1s;
+    transition-delay: 1s; */
+    /* Timing function css */
+    transition: margin-top 3s ease-in 0.2s;
+}
+
+div:hover{
+    /* background-color: black;
+    border-radius: 50%; */
+    background-color: pink;
+    margin-top: 400px;
+
+}
