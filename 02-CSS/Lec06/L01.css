@@ -1,0 +1,62 @@
+.container {
+    width: 700px;
+    height: 400px;
+    background-color: yellow;
+
+    display: inline-grid;
+
+    /* Rows & Columns */
+    /* grid-template-rows: 50px 50px 50px 50px;
+    grid-template-columns: 100px 100px 100px; */
+
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+
+    /* Gaps */
+    row-gap: 10px;
+    column-gap: 10px;
+    grid-gap: 10px;
+
+    /* All items */
+    /* justify-items: end; */
+    /* align-items: center; */
+
+    /* Both */
+    place-items: center;
+}
+
+.item {
+    width: 100px;
+    height: 50px;
+    background-color: greenyellow;
+    border: 2px solid black;
+    text-align: center;
+}
+
+.one {
+    /* Columns */
+    /* grid-column-start: 1;
+    grid-column-end: 4; */
+
+    /* Shorthand */
+    /* grid-column: 1 / 4; */
+
+    /* Span */
+    /* grid-column: 1 / span 3; */
+
+    /* One item */
+    /* justify-self: start; */
+    /* align-self: start; */
+
+    /* Both */
+    place-self: start;
+}
+
+.two {
+    /* Rows */
+    /* grid-row-start: 1;
+    grid-row-end: 3; */
+
+    /* Shorthand + span */
+    /* grid-row: 1 / span 3; */
+}

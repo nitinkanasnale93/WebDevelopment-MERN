@@ -1,0 +1,52 @@
+.box {
+    height: 100px;
+    width: 300px;
+
+    /* background-color: orangered;
+    animation-name: colorAnimation;
+    animation-duration: 2s;
+    animation-timing-function: ease-in;
+    animation-delay: 0;
+    animation-iteration-count: 3;
+    animation-direction: normal; */
+
+    animation: colorAnimation 2s ease-in 0s 3 normal;
+}
+
+@keyframes fontAnimation {
+    from {
+        font-size: 20px;
+    }
+
+    to {
+        font-size: 30px;
+    }
+}
+
+@keyframes colorAnimation {
+    0% {
+        background-color: orangered;
+        width: 50px;
+    }
+
+    25% {
+        background-color: yellow;
+        width: 100px;
+    }
+
+    50% {
+        background-color: green;
+        width: 200px;
+    }
+
+    75% {
+        background-color: blue;
+        width: 300px;
+    }
+
+    100% {
+        background-color: yellow;
+        width: 400px;
+        border-radius: 25%;
+    }
+}
