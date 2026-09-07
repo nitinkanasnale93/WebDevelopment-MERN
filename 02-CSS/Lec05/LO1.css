@@ -1,0 +1,111 @@
+#containeer {
+    width: 60%;
+    height: 600px;
+    background-color: azure;
+    margin: 10px auto;
+    border: 2px solid black;
+
+    display: flex;
+
+    /* 1. FLEX-DIRECTION → Direction of MAIN axis */
+    flex-direction: row;
+    /* row-reverse */
+    /* column */
+    /* column-reverse */
+
+
+    /* 2. JUSTIFY-CONTENT → Items on MAIN axis */
+    justify-content: flex-start;
+    /* flex-end */
+    /* center */
+    /* space-between */
+    /* space-around */
+    /* space-evenly */
+
+
+    /* 3. FLEX-WRAP → One line or multiple lines */
+    flex-wrap: nowrap;
+    /* wrap */
+    /* wrap-reverse */
+
+
+    /* 4. ALIGN-ITEMS → Items on CROSS axis */
+    align-items: stretch;
+    /* flex-start */
+    /* flex-end */
+    /* center */
+    /* baseline */
+
+
+    /* 5. ALIGN-CONTENT → Multiple lines on CROSS axis */
+    align-content: flex-start;
+    /* flex-end */
+    /* center */
+    /* space-between */
+    /* space-around */
+    /* space-evenly */
+
+
+    /* 6. GAP → Space between items */
+    /* gap: 10px; */
+}
+
+h1 {
+    text-align: center;
+}
+
+#containeer div {
+    height: 100px;
+    width: 50px;
+    color: white;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+
+/* 7. ALIGN-SELF → One particular item on CROSS axis */
+#yellow {
+    align-self: flex-start;
+
+    /* FLEX-BASIS → Initial MAIN-axis size */
+    /* flex-basis: 30px; */
+
+    /* FLEX-GROW → Takes extra space */
+    /* flex-grow: 1; */
+
+    /* FLEX-SHRINK → Shrinks when space is insufficient */
+    /* flex-shrink: 1; */
+
+    /* Minimum size */
+    /* min-width: 200px; */
+
+    flex-grow: 2;
+}
+
+
+/* 8. FLEX-BASIS + GROW + SHRINK → FLEX SHORTHAND */
+#red {
+    /*
+    flex-basis: 400px;
+    flex-grow: 2;
+    flex-shrink: 3;
+    */
+
+    /* flex: grow shrink basis; */
+    flex: 2 2 100px;
+
+    /* Maximum size */
+    max-width: 400px;
+}
+
+
+/* 9. FLEX-GROW → Example */
+#orange {
+    /* flex-grow: 1; */
+}
+
+
+/* 10. FLEX-SHRINK → Example */
+#blue {
+    /* flex-shrink: 1; */
+}
