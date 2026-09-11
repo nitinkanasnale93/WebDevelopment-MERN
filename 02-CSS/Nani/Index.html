@@ -2,131 +2,961 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
     <title>NANI | Natural Star</title>
-    <link rel="stylesheet" href="style.css">
+
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    >
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+
+        /* ================= GENERAL ================= */
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: "DM Sans", sans-serif;
+            background-color: #f1eee7;
+            color: #171717;
+        }
+
+        section {
+            scroll-margin-top: 80px;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        .navbar {
+            background-color: #f1eee7 !important;
+            border-bottom: 1px solid #d8d4cc;
+        }
+
+        .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: -2px;
+            color: #171717 !important;
+        }
+
+        .nav-link {
+            color: #171717 !important;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-left: 20px;
+        }
+
+        .nav-link:hover {
+            opacity: 0.5;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: calc(100vh - 75px);
+            display: flex;
+            align-items: center;
+            padding: 70px 0;
+        }
+
+        .hero-small {
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #77736c;
+        }
+
+        .hero-title {
+            font-size: clamp(5rem, 16vw, 13rem);
+            line-height: 0.78;
+            letter-spacing: -10px;
+            font-weight: 700;
+            margin: 25px 0;
+        }
+
+        .hero-title span {
+            display: block;
+        }
+
+        .hero-title .natural {
+            font-family: "Playfair Display", serif;
+            font-weight: 500;
+            font-style: italic;
+        }
+
+        .hero-description {
+            max-width: 500px;
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #65615b;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+        }
+
+        .gold-line {
+            width: 60px;
+            height: 2px;
+            background-color: #b59661;
+            margin: 25px 0;
+        }
+
+        /* ================= ABOUT ================= */
+
+        .about-section {
+            background-color: #191919;
+            color: #f1eee7;
+            padding: 120px 0;
+        }
+
+        .about-number {
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            color: #aaa59d;
+        }
+
+        .about-title {
+            font-size: clamp(3rem, 7vw, 6rem);
+            line-height: 0.95;
+            letter-spacing: -4px;
+        }
+
+        .about-text {
+            color: #aaa59d;
+            line-height: 1.9;
+            font-size: 1rem;
+        }
+
+        /* ================= MOVIES ================= */
+
+        .movies-section {
+            padding: 120px 0;
+            background-color: #e5e0d7;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #77736c;
+        }
+
+        .section-title {
+            font-size: clamp(3rem, 7vw, 6rem);
+            letter-spacing: -5px;
+            line-height: 0.9;
+        }
+
+        .movie-card {
+            background-color: transparent;
+            border: none;
+            border-radius: 0;
+            overflow: hidden;
+        }
+
+        .movie-image {
+            height: 500px;
+            object-fit: cover;
+            transition: 0.5s ease;
+        }
+
+        .movie-card:hover .movie-image {
+            transform: scale(1.03);
+        }
+
+        .movie-card-body {
+            padding: 25px 5px;
+        }
+
+        .movie-number {
+            font-size: 0.75rem;
+            color: #88847c;
+            letter-spacing: 2px;
+        }
+
+        .movie-title {
+            font-family: "Playfair Display", serif;
+            font-size: 1.8rem;
+            margin-top: 5px;
+        }
+
+        /* ================= ACHIEVEMENTS ================= */
+
+        .achievements-section {
+            padding: 120px 0;
+            background-color: #f1eee7;
+        }
+
+        .award {
+            border-top: 1px solid #c9c4bb;
+            padding: 25px 0;
+        }
+
+        .award:last-child {
+            border-bottom: 1px solid #c9c4bb;
+        }
+
+        .award-number {
+            color: #a18a61;
+            font-size: 0.8rem;
+        }
+
+        .award-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .award-icon {
+            color: #a18a61;
+        }
+
+        /* ================= CONTACT ================= */
+
+        .contact-section {
+            background-color: #c9b99b;
+            padding: 120px 0;
+        }
+
+        .contact-title {
+            font-size: clamp(4rem, 9vw, 8rem);
+            letter-spacing: -7px;
+            line-height: 0.85;
+        }
+
+        .form-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .form-control {
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid #81725b;
+            border-radius: 0;
+            padding: 15px 0;
+        }
+
+        .form-control:focus {
+            background-color: transparent;
+            border-color: #171717;
+            box-shadow: none;
+        }
+
+        .submit-btn {
+            border-radius: 0;
+            background-color: #171717;
+            color: white;
+            padding: 15px 40px;
+        }
+
+        .submit-btn:hover {
+            background-color: #333333;
+            color: white;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background-color: #191919;
+            color: #aaa59d;
+            padding: 30px 0;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 768px) {
+
+            .hero {
+                padding: 50px 0;
+            }
+
+            .hero-title {
+                letter-spacing: -5px;
+            }
+
+            .hero-image {
+                height: 450px;
+                margin-top: 40px;
+            }
+
+            .about-section,
+            .movies-section,
+            .achievements-section,
+            .contact-section {
+                padding: 80px 0;
+            }
+
+            .section-title {
+                letter-spacing: -3px;
+            }
+
+        }
+
+    </style>
+
 </head>
+
 
 <body>
 
-    <header>
-        <div>
-            <h1>Nani</h1>
 
-            <nav>
-                <ul>
-                    <li><a href="#Home">Home</a></li>
-                    <li><a href="#About">About</a></li>
-                    <li><a href="#Movies">Movies</a></li>
-                    <li><a href="#Achievements">Achievements</a></li>
-                    <li><a href="#Contact">Contact</a></li>
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+
+        <div class="container-fluid px-4 px-lg-5">
+
+            <a
+                href="#Home"
+                class="navbar-brand"
+            >
+                NANI
+            </a>
+
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarMenu"
+                aria-controls="navbarMenu"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+
+            <div
+                class="collapse navbar-collapse"
+                id="navbarMenu"
+            >
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="#Home"
+                        >
+                            Home
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="#About"
+                        >
+                            About
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="#Movies"
+                        >
+                            Movies
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="#Achievements"
+                        >
+                            Awards
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="#Contact"
+                        >
+                            Contact
+                        </a>
+                    </li>
+
                 </ul>
-            </nav>
-        </div>
-    </header>
 
-    <hr>
-
-    <main>
-
-        <section id="Home">
-
-            <img src="https://images.openai.com/static-rsc-4/RQzlnd6DRPEgXMZq75djLhv3G2BltuBn1hkYWRt9dh7Fywdk-LPPH5VIawQEgckTnEe_cS-hjKl4b86kSMlE0x1_bwcL02WmmDWTDJUrLSrmPpF5flgtzMfSY8J84Kpk_bZy7b77-heELVukMIE_Ft1NsNVVGCtGisITejqu3OZDHZWAUkdyLyEGdfNjvrxs?purpose=fullsize"
-                alt="Nani">
-
-            <h2><i>Natural Star Nani</i></h2>
-            <p>Actor &amp; Producer</p>
-
-        </section>
-
-        <hr>
-
-        <section id="About">
-
-            <h2><i>About Nani</i></h2>
-
-            <p>
-                Nani, popularly known as the Natural Star, is a talented Telugu actor
-                and producer known for his natural acting, relatable characters, and
-                versatile performances. He has worked in several successful films
-                across different genres and has earned a strong fan following for
-                his unique style and storytelling choices.
-            </p>
-
-        </section>
-
-        <hr>
-
-        <section id="Movies">
-
-            <h2><i>Popular Movies</i></h2>
-
-            <div>
-                <img src="https://i.pinimg.com/1200x/3f/f8/2f/3ff82f32322d04b78f487b8e902d8e75.jpg"
-                    alt="Nani movie poster">
-
-                <img src="https://i.pinimg.com/736x/02/c6/10/02c61053618cb134b26cf90992123b20.jpg"
-                    alt="Nani movie poster">
-
-                <img src="https://i.pinimg.com/736x/53/38/fb/5338fb79a1422bb04bf2fc94e7edff4c.jpg"
-                    alt="Nani movie poster">
             </div>
 
-        </section>
+        </div>
 
-        <hr>
+    </nav>
 
-        <section id="Achievements">
 
-            <h2>Achievements &amp; Awards</h2>
 
-            <ul>
-                <li>Filmfare Awards South — Winner</li>
-                <li>Nandi Awards — Winner</li>
-                <li>SIIMA Awards — Winner</li>
-                <li>Critics' Choice Awards — Recognized for his performances</li>
-                <li>National Award — <i>Jersey</i> was selected as the Best Telugu Film</li>
-            </ul>
+    <!-- ================= HERO ================= -->
 
-        </section>
+    <section id="Home" class="hero">
 
-        <hr>
+        <div class="container-fluid px-4 px-lg-5">
 
-        <section id="Contact">
+            <div class="row align-items-center g-5">
 
-            <h2>Contact</h2>
+                <div class="col-12 col-lg-7">
 
-            <form>
+                    <p class="hero-small mb-0">
+                        Actor · Producer · Natural Star
+                    </p>
 
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name">
+                    <div class="gold-line"></div>
 
-                <br><br>
+                    <h1 class="hero-title">
 
-                <label for="email">E-mail</label>
-                <input type="email" id="email" name="email">
+                        <span class="natural">
+                            Natural
+                        </span>
 
-                <br><br>
+                        <span>
+                            Nani
+                        </span>
 
-                <label for="message">Message</label>
-                <input type="text" id="message" name="message">
+                    </h1>
 
-                <br><br>
+                    <p class="hero-description">
 
-                <button type="submit">Submit</button>
+                        Nani is one of Telugu cinema's most
+                        admired actors, known for his natural
+                        performances, relatable characters and
+                        willingness to explore different stories.
 
-            </form>
+                    </p>
 
-        </section>
+                    <a
+                        href="#Movies"
+                        class="btn btn-dark rounded-0 px-4 py-3 mt-3"
+                    >
+                        Explore Movies
+                    </a>
 
-    </main>
+                </div>
 
-    <hr>
+
+                <div class="col-12 col-lg-5">
+
+                    <img
+                        src="https://images.openai.com/static-rsc-4/RQzlnd6DRPEgXMZq75djLhv3G2BltuBn1hkYWRt9dh7Fywdk-LPPH5VIawQEgckTnEe_cS-hjKl4b86kSMlE0x1_bwcL02WmmDWTDJUrLSrmPpF5flgtzMfSY8J84Kpk_bZy7b77-heELVukMIE_Ft1NsNVVGCtGisITejqu3OZDHZWAUkdyLyEGdfNjvrxs?purpose=fullsize"
+                        alt="Nani"
+                        class="hero-image"
+                    >
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section id="About" class="about-section">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-12 col-lg-3">
+
+                    <p class="about-number">
+                        01 / ABOUT
+                    </p>
+
+                </div>
+
+
+                <div class="col-12 col-lg-9">
+
+                    <h2 class="about-title mb-5">
+
+                        The
+                        <span class="text-warning">
+                            Natural
+                        </span>
+                        Star.
+
+                    </h2>
+
+                    <div class="row">
+
+                        <div class="col-md-8">
+
+                            <p class="about-text">
+
+                                Nani, popularly known as the Natural Star,
+                                is a talented Telugu actor and producer
+                                known for his natural acting, relatable
+                                characters, and versatile performances.
+
+                            </p>
+
+                            <p class="about-text">
+
+                                He has worked in several successful films
+                                across different genres and has earned a
+                                strong fan following for his unique style
+                                and storytelling choices.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= MOVIES ================= -->
+
+    <section id="Movies" class="movies-section">
+
+        <div class="container-fluid px-4 px-lg-5">
+
+            <div class="row mb-5">
+
+                <div class="col-12 col-lg-6">
+
+                    <p class="section-label">
+                        02 / FILMOGRAPHY
+                    </p>
+
+                    <h2 class="section-title">
+                        Popular<br>
+                        Movies
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="row g-5">
+
+
+                <!-- Movie 1 -->
+
+                <div class="col-12 col-md-6 col-lg-4">
+
+                    <div class="movie-card">
+
+                        <img
+                            src="https://i.pinimg.com/1200x/3f/f8/2f/3ff82f32322d04b78f487b8e902d8e75.jpg"
+                            alt="Nani movie poster"
+                            class="movie-image w-100"
+                        >
+
+                        <div class="movie-card-body">
+
+                            <span class="movie-number">
+                                01
+                            </span>
+
+                            <h3 class="movie-title">
+                                Nani Movie
+                            </h3>
+
+                            <p class="text-secondary">
+                                A memorable film from Nani's
+                                filmography.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Movie 2 -->
+
+                <div class="col-12 col-md-6 col-lg-4">
+
+                    <div class="movie-card">
+
+                        <img
+                            src="https://i.pinimg.com/736x/02/c6/10/02c61053618cb134b26cf90992123b20.jpg"
+                            alt="Nani movie poster"
+                            class="movie-image w-100"
+                        >
+
+                        <div class="movie-card-body">
+
+                            <span class="movie-number">
+                                02
+                            </span>
+
+                            <h3 class="movie-title">
+                                Nani Movie
+                            </h3>
+
+                            <p class="text-secondary">
+                                Another popular movie from
+                                Nani's career.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Movie 3 -->
+
+                <div class="col-12 col-md-6 col-lg-4">
+
+                    <div class="movie-card">
+
+                        <img
+                            src="https://i.pinimg.com/736x/53/38/fb/5338fb79a1422bb04bf2fc94e7edff4c.jpg"
+                            alt="Nani movie poster"
+                            class="movie-image w-100"
+                        >
+
+                        <div class="movie-card-body">
+
+                            <span class="movie-number">
+                                03
+                            </span>
+
+                            <h3 class="movie-title">
+                                Nani Movie
+                            </h3>
+
+                            <p class="text-secondary">
+                                A film highlighting Nani's
+                                versatility as an actor.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= ACHIEVEMENTS ================= -->
+
+    <section
+        id="Achievements"
+        class="achievements-section"
+    >
+
+        <div class="container">
+
+            <div class="row mb-5">
+
+                <div class="col-lg-4">
+
+                    <p class="section-label">
+                        03 / RECOGNITION
+                    </p>
+
+                </div>
+
+                <div class="col-lg-8">
+
+                    <h2 class="section-title">
+                        Achievements<br>
+                        &amp; Awards
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="row justify-content-end">
+
+                <div class="col-12 col-lg-8">
+
+
+                    <div class="award row align-items-center">
+
+                        <div class="col-2 award-number">
+                            01
+                        </div>
+
+                        <div class="col-8 award-name">
+                            Filmfare Awards South
+                        </div>
+
+                        <div class="col-2 text-end">
+                            <i class="fa-solid fa-trophy award-icon"></i>
+                        </div>
+
+                    </div>
+
+
+                    <div class="award row align-items-center">
+
+                        <div class="col-2 award-number">
+                            02
+                        </div>
+
+                        <div class="col-8 award-name">
+                            Nandi Awards
+                        </div>
+
+                        <div class="col-2 text-end">
+                            <i class="fa-solid fa-trophy award-icon"></i>
+                        </div>
+
+                    </div>
+
+
+                    <div class="award row align-items-center">
+
+                        <div class="col-2 award-number">
+                            03
+                        </div>
+
+                        <div class="col-8 award-name">
+                            SIIMA Awards
+                        </div>
+
+                        <div class="col-2 text-end">
+                            <i class="fa-solid fa-trophy award-icon"></i>
+                        </div>
+
+                    </div>
+
+
+                    <div class="award row align-items-center">
+
+                        <div class="col-2 award-number">
+                            04
+                        </div>
+
+                        <div class="col-8 award-name">
+                            Critics' Choice Awards
+                        </div>
+
+                        <div class="col-2 text-end">
+                            <i class="fa-solid fa-star award-icon"></i>
+                        </div>
+
+                    </div>
+
+
+                    <div class="award row align-items-center">
+
+                        <div class="col-2 award-number">
+                            05
+                        </div>
+
+                        <div class="col-8 award-name">
+                            National Award
+                        </div>
+
+                        <div class="col-2 text-end">
+                            <i class="fa-solid fa-award award-icon"></i>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section id="Contact" class="contact-section">
+
+        <div class="container">
+
+            <div class="row g-5">
+
+                <div class="col-12 col-lg-6">
+
+                    <p class="section-label">
+                        04 / CONTACT
+                    </p>
+
+                    <h2 class="contact-title mt-4">
+                        Say<br>
+                        Hello.
+                    </h2>
+
+                </div>
+
+
+                <div class="col-12 col-lg-6">
+
+                    <form class="mt-lg-5">
+
+
+                        <div class="mb-4">
+
+                            <label
+                                for="name"
+                                class="form-label"
+                            >
+                                Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                class="form-control"
+                                placeholder="Your name"
+                            >
+
+                        </div>
+
+
+                        <div class="mb-4">
+
+                            <label
+                                for="email"
+                                class="form-label"
+                            >
+                                E-mail
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                class="form-control"
+                                placeholder="Your email"
+                            >
+
+                        </div>
+
+
+                        <div class="mb-4">
+
+                            <label
+                                for="message"
+                                class="form-label"
+                            >
+                                Message
+                            </label>
+
+                            <textarea
+                                id="message"
+                                name="message"
+                                class="form-control"
+                                rows="4"
+                                placeholder="Your message"
+                            ></textarea>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="btn submit-btn"
+                        >
+                            Send Message
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
 
     <footer>
-        <p>&copy; 2026 Nani Fan Website. All Rights Reserved.</p>
+
+        <div class="container">
+
+            <div class="row align-items-center">
+
+                <div class="col-md-6">
+
+                    <strong>NANI</strong>
+
+                </div>
+
+                <div class="col-md-6 text-md-end">
+
+                    <p class="mb-0">
+                        &copy; 2026 Nani Fan Website.
+                        All Rights Reserved.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
     </footer>
+
+
+
+    <!-- Bootstrap JavaScript -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    ></script>
 
 </body>
 
