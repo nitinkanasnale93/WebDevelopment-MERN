@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,14 +8,12 @@
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
-        integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+        integrity="sha512-QeR2VH+lsBE5LSAeA1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
         crossorigin="anonymous"
         referrerpolicy="no-referrer"
     >
 
     <link rel="icon" href="./assets/logo.png">
-
-    <title>Spotify - Web Player: Music for everyone</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,6 +24,8 @@
     >
 
     <link rel="stylesheet" href="style.css">
+
+    <title>Spotify - Web Player: Music for everyone</title>
 </head>
 
 <body>
@@ -47,36 +48,63 @@
 
             </div>
 
-
             <div class="library">
 
                 <div class="opt">
 
                     <div class="lib-opt nav-opt">
-                        <img src="./assets/library_icon.png">
+
+                        <img
+                            src="./assets/library_icon.png"
+                            alt="Your Library"
+                        >
+
                         <a href="#">Your Library</a>
+
                     </div>
 
                     <div class="icons">
+
                         <i class="fa-solid fa-plus"></i>
+
                         <i class="fa-solid fa-right-long"></i>
+
                     </div>
 
                 </div>
-
 
                 <div class="lib-box">
 
                     <div class="box">
-                        <p class="box-p1">create your first playlist</p>
-                        <p class="box-p2">It's easy, we'll help you</p>
-                        <button class="badge">Create Playlist</button>
+
+                        <p class="box-p1">
+                            Create your first playlist
+                        </p>
+
+                        <p class="box-p2">
+                            It's easy, we'll help you
+                        </p>
+
+                        <button class="badge">
+                            Create Playlist
+                        </button>
+
                     </div>
 
                     <div class="box">
-                        <p class="box-p1">Let's find podcast to foll0w</p>
-                        <p class="box-p2">we'll keep you updated on new episodes</p>
-                        <button class="badge">Browse Podcast</button>
+
+                        <p class="box-p1">
+                            Let's find podcasts to follow
+                        </p>
+
+                        <p class="box-p2">
+                            We'll keep you updated on new episodes
+                        </p>
+
+                        <button class="badge">
+                            Browse Podcasts
+                        </button>
+
                     </div>
 
                 </div>
@@ -85,28 +113,304 @@
 
         </div>
 
-
         <div class="main-content">
+
             <div class="sticky-nav">
+
                 <div class="icon">
-                <img src="./assets/backward_icon.png">
-                <img src="./assets/forward_icon.png" class="hide">
+
+                    <img
+                        src="./assets/backward_icon.png"
+                        alt="Back"
+                    >
+
+                    <img
+                        src="./assets/forward_icon.png"
+                        alt="Forward"
+                        class="hide"
+                    >
+
                 </div>
+
                 <div class="btnbadge">
-                <button class="badge navitem hide">Explore Premium</button>
-                <button class="badge navitem dark-badge"><i class="fa-solid fa-circle-down"></i>Install App</button>
-                <i class="fa-regular fa-user navitem"></i>
+
+                    <button class="badge navitem hide">
+                        Explore Premium
+                    </button>
+
+                    <button class="badge navitem dark-badge">
+
+                        <i class="fa-solid fa-circle-down"></i>
+
+                        Install App
+
+                    </button>
+
+                    <i class="fa-regular fa-user navitem"></i>
+
                 </div>
+
             </div>
+
             <div class="cards">
+
+                <h2>Recently Played</h2>
+
+                <div class="card-container">
+
+                    <div class="card">
+
+                        <img
+                            src="./assets/card1img.jpeg"
+                            alt="Top 50 Global"
+                            class="card-img"
+                        >
+
+                        <p class="card-title">
+                            Top 50 - Global
+                        </p>
+
+                        <p class="card-info">
+                            Your daily updates of the most played tracks...
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <h2>Trending now near you</h2>
+
+                <div class="trending">
+
+                    <div class="card-container">
+
+                        <div class="card">
+
+                            <img
+                                src="./assets/card2img.jpeg"
+                                alt="Mahiye Jinna Sohna"
+                                class="card-img"
+                            >
+
+                            <p class="card-title">
+                                Mahiye Jinna Sohna
+                            </p>
+
+                            <p class="card-info">
+                                Darshan Raval
+                            </p>
+
+                        </div>
+
+                        <div class="card">
+
+                            <img
+                                src="./assets/card3img.jpeg"
+                                alt="Mere Paas Tum Ho"
+                                class="card-img"
+                            >
+
+                            <p class="card-title">
+                                Mere Paas Tum Ho
+                            </p>
+
+                            <p class="card-info">
+                                Silent Ocean
+                            </p>
+
+                        </div>
+
+                        <div class="card">
+
+                            <img
+                                src="./assets/card4img.jpeg"
+                                alt="Naa Ready"
+                                class="card-img"
+                            >
+
+                            <p class="card-title">
+                                Naa Ready
+                            </p>
+
+                            <p class="card-info">
+                                Anirudh Ravichander
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <h2>Feature Charts</h2>
+
+                <div class="card-container">
+
+                    <div class="card">
+
+                        <img
+                            src="./assets/card5img.jpeg"
+                            alt="Top Songs Global"
+                            class="card-img"
+                        >
+
+                        <p class="card-title">
+                            Top Songs - Global
+                        </p>
+
+                        <p class="card-info">
+                            Weekly Music Charts
+                        </p>
+
+                    </div>
+
+                    <div class="card">
+
+                        <img
+                            src="./assets/card6img.jpeg"
+                            alt="Top Songs India"
+                            class="card-img"
+                        >
+
+                        <p class="card-title">
+                            Top Songs - India
+                        </p>
+
+                        <p class="card-info">
+                            Weekly Music Charts
+                        </p>
+
+                    </div>
+
+                </div>
+
             </div>
+
+            <div class="footer">
+
+                <div class="footer-content">
+
+                    <div class="footer-column">
+
+                        <h3>Company</h3>
+
+                        <p>About</p>
+
+                        <p>Jobs</p>
+
+                        <p>For the Record</p>
+
+                    </div>
+
+                    <div class="footer-column">
+
+                        <h3>Communities</h3>
+
+                        <p>For Artists</p>
+
+                        <p>Developers</p>
+
+                        <p>Advertising</p>
+
+                    </div>
+
+                    <div class="footer-column">
+
+                        <h3>Useful Links</h3>
+
+                        <p>Support</p>
+
+                        <p>Free Mobile App</p>
+
+                    </div>
+
+                    <div class="social-icons">
+
+                        <i class="fa-brands fa-instagram"></i>
+
+                        <i class="fa-brands fa-twitter"></i>
+
+                        <i class="fa-brands fa-facebook"></i>
+
+                    </div>
+
+                </div>
+
+                <div class="line2"></div>
+
+                <p class="copyright">
+                    © 2026 Spotify
+                </p>
+
+            </div>
+
         </div>
 
         <div class="music-player">
-            music-player
+
+            <div class="musicinfo">
+
+                <div class="info">
+
+                    <img
+                        src="./Homework Assets/album_picture.jpeg"
+                        alt="Album"
+                    >
+
+                    <div class="block">
+
+                        <h4>
+                            DayLight
+                        </h4>
+
+                        <p>
+                            <i>David Warner</i>
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="albumicon">
+
+                    <img
+                        src="./Homework Assets/album_icon1.png"
+                        alt=""
+                    >
+
+                    <img
+                        src="./Homework Assets/album_icon2.png"
+                        alt=""
+                    >
+
+                </div>
+
+            </div>
+
+            <div class="controls">
+
+            </div>
+
+            <div class="other-controls">
+
+                <div class="octrls">
+
+                    <img src="./Homework Assets/controls_icon1.png">
+                    <img src="./Homework Assets/controld_icon2.png">
+                    <img src="./Homework Assets/controls_icon3.png">
+                    <img src="./Homework Assets/controls_icon4.png">
+                    <img src="./Homework Assets/controls_icon5.png">
+
+                    <input type="range" value="1-100" step="10">
+
+                </div>
+
+            </div>
+
         </div>
 
     </div>
 
 </body>
+
 </html>
