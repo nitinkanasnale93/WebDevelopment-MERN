@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Switch Statement - JavaScript</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+</head>
+
+<body class="bg-light">
+
+    <!-- Header -->
+    <header class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <h1>Switch Statement</h1>
+            <p class="mb-0">
+                JavaScript Conditional Statement
+            </p>
+        </div>
+    </header>
+
+
+    <!-- Main Content -->
+    <main class="container py-5">
+
+        <!-- Introduction -->
+        <section class="card shadow-sm mb-4">
+            <div class="card-body">
+
+                <h2 class="text-primary">What is a Switch Statement?</h2>
+
+                <p>
+                    A <strong>switch statement</strong> is used when we have
+                    multiple fixed values that we need to compare with one value.
+                </p>
+
+                <p>
+                    It is an alternative to using many
+                    <strong>else if</strong> statements.
+                </p>
+
+            </div>
+        </section>
+
+
+        <!-- Syntax -->
+        <section class="card shadow-sm mb-4">
+            <div class="card-body">
+
+                <h2 class="text-success">Basic Structure</h2>
+
+                <pre class="bg-dark text-white p-3 rounded"><code>switch (value) {
+
+    case "value1":
+        // code
+        break;
+
+    case "value2":
+        // code
+        break;
+
+    case "value3":
+        // code
+        break;
+
+    default:
+        // code
+}</code></pre>
+
+            </div>
+        </section>
+
+
+        <!-- Important Keywords -->
+        <section class="card shadow-sm mb-4">
+            <div class="card-body">
+
+                <h2 class="text-warning">Important Keywords</h2>
+
+                <div class="table-responsive">
+
+                    <table class="table table-bordered table-hover text-center">
+
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Keyword</th>
+                                <th>Purpose</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td><code>switch</code></td>
+                                <td>
+                                    Starts the switch statement.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><code>case</code></td>
+                                <td>
+                                    Defines a value to compare.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><code>break</code></td>
+                                <td>
+                                    Stops execution after a matching case.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><code>default</code></td>
+                                <td>
+                                    Runs when no case matches.
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Example -->
+        <section class="card shadow-sm mb-4">
+            <div class="card-body">
+
+                <h2 class="text-danger">Example: Traffic Light</h2>
+
+                <div class="table-responsive">
+
+                    <table class="table table-bordered text-center">
+
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Color</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>Red</td>
+                                <td>Stop</td>
+                            </tr>
+
+                            <tr>
+                                <td>Yellow</td>
+                                <td>Slow down</td>
+                            </tr>
+
+                            <tr>
+                                <td>Green</td>
+                                <td>Go</td>
+                            </tr>
+
+                            <tr>
+                                <td>Other</td>
+                                <td>Broken Light</td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Flow -->
+        <section class="card shadow-sm mb-4">
+            <div class="card-body">
+
+                <h2 class="text-info">How It Works</h2>
+
+                <ol class="list-group list-group-numbered">
+
+                    <li class="list-group-item">
+                        The <strong>switch</strong> receives a value.
+                    </li>
+
+                    <li class="list-group-item">
+                        JavaScript checks each <strong>case</strong>.
+                    </li>
+
+                    <li class="list-group-item">
+                        When a matching case is found, its code runs.
+                    </li>
+
+                    <li class="list-group-item">
+                        <strong>break</strong> stops the switch.
+                    </li>
+
+                    <li class="list-group-item">
+                        If nothing matches, <strong>default</strong> runs.
+                    </li>
+
+                </ol>
+
+            </div>
+        </section>
+
+
+        <!-- Quick Notes -->
+        <section class="alert alert-primary shadow-sm">
+
+            <h3>Quick Notes</h3>
+
+            <ul class="mb-0">
+
+                <li>
+                    Use <strong>switch</strong> for multiple fixed values.
+                </li>
+
+                <li>
+                    Use <strong>case</strong> to define possible values.
+                </li>
+
+                <li>
+                    Use <strong>break</strong> to stop after a match.
+                </li>
+
+                <li>
+                    Use <strong>default</strong> when no case matches.
+                </li>
+
+                <li>
+                    Switch statements are useful for menus,
+                    traffic lights, days, months, and other fixed choices.
+                </li>
+
+            </ul>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+
+        <p class="mb-0">
+            JavaScript Learning • Switch Statement
+        </p>
+
+    </footer>
+
+    <script src="switch.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Logical Operators</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+    <!-- Header -->
+    <header class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <h1 class="fw-bold mb-2">Logical Operators</h1>
+            <p class="mb-0">JavaScript Truth Tables</p>
+        </div>
+    </header>
+
+
+    <!-- Main Content -->
+    <main class="container py-5">
+
+        <!-- AND -->
+        <section class="card shadow-sm mb-5">
+            <div class="card-header bg-primary text-white">
+                <h2 class="h4 mb-0">1. Logical AND (&&)</h2>
+            </div>
+
+            <div class="card-body">
+
+                <p>
+                    Returns <strong>true</strong> only when
+                    <strong>both</strong> expressions are true.
+                </p>
+
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover text-center align-middle">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Expression 1</th>
+                                <th>Expression 2</th>
+                                <th>Result</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>True</td>
+                                <td>True</td>
+                                <td class="table-success fw-bold">True</td>
+                            </tr>
+
+                            <tr>
+                                <td>True</td>
+                                <td>False</td>
+                                <td class="table-danger fw-bold">False</td>
+                            </tr>
+
+                            <tr>
+                                <td>False</td>
+                                <td>True</td>
+                                <td class="table-danger fw-bold">False</td>
+                            </tr>
+
+                            <tr>
+                                <td>False</td>
+                                <td>False</td>
+                                <td class="table-danger fw-bold">False</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- OR -->
+        <section class="card shadow-sm mb-5">
+            <div class="card-header bg-success text-white">
+                <h2 class="h4 mb-0">2. Logical OR (||)</h2>
+            </div>
+
+            <div class="card-body">
+
+                <p>
+                    Returns <strong>true</strong> when
+                    <strong>at least one</strong> expression is true.
+                </p>
+
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover text-center align-middle">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Expression 1</th>
+                                <th>Expression 2</th>
+                                <th>Result</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>True</td>
+                                <td>True</td>
+                                <td class="table-success fw-bold">True</td>
+                            </tr>
+
+                            <tr>
+                                <td>True</td>
+                                <td>False</td>
+                                <td class="table-success fw-bold">True</td>
+                            </tr>
+
+                            <tr>
+                                <td>False</td>
+                                <td>True</td>
+                                <td class="table-success fw-bold">True</td>
+                            </tr>
+
+                            <tr>
+                                <td>False</td>
+                                <td>False</td>
+                                <td class="table-danger fw-bold">False</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- NOT -->
+        <section class="card shadow-sm mb-5">
+            <div class="card-header bg-warning">
+                <h2 class="h4 mb-0">3. Logical NOT (!)</h2>
+            </div>
+
+            <div class="card-body">
+
+                <p>
+                    Reverses the boolean value.
+                </p>
+
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover text-center align-middle">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Expression</th>
+                                <th>Result</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>True</td>
+                                <td class="table-danger fw-bold">False</td>
+                            </tr>
+
+                            <tr>
+                                <td>False</td>
+                                <td class="table-success fw-bold">True</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Quick Summary -->
+        <section class="card shadow-sm">
+            <div class="card-header bg-dark text-white">
+                <h2 class="h4 mb-0">Quick Summary</h2>
+            </div>
+
+            <div class="card-body">
+
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered text-center mb-0">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Operator</th>
+                                <th>Name</th>
+                                <th>Rule</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td><code>&&</code></td>
+                                <td>AND</td>
+                                <td>Both must be true</td>
+                            </tr>
+
+                            <tr>
+                                <td><code>||</code></td>
+                                <td>OR</td>
+                                <td>At least one must be true</td>
+                            </tr>
+
+                            <tr>
+                                <td><code>!</code></td>
+                                <td>NOT</td>
+                                <td>Reverses the result</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p class="mb-0">
+            JavaScript Learning • Logical Operators
+        </p>
+    </footer>
+
+    <script src="Logical.js"></script>
+
+</body>
+
+</html>
