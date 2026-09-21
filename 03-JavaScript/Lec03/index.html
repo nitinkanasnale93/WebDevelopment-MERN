@@ -3,346 +3,382 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>trim() Method</title>
-
-    <!-- Bootstrap CSS -->
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-    >
+    <title>JavaScript String & Array Methods</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body class="bg-light">
-
-    <div class="container py-5">
-
-        <!-- Heading -->
-        <div class="text-center mb-5">
-            <h1 class="display-5 fw-bold text-primary">
-                trim() Method
-            </h1>
-
-            <p class="lead">
-                JavaScript String Method
-            </p>
-        </div>
-
-
-        <!-- What is trim -->
-        <div class="card shadow-sm mb-4">
-            <div class="card-body">
-
-                <h2 class="text-primary">
-                    What is trim()?
-                </h2>
-
-                <p>
-                    The <strong>trim()</strong> method removes whitespace
-                    from the <strong>beginning</strong> and
-                    <strong>end</strong> of a string.
-                </p>
-
-                <div class="alert alert-info">
-                    <strong>Syntax:</strong>
-                    <code>string.trim()</code>
-                </div>
-
-            </div>
-        </div>
-
-
-        <!-- Example -->
-        <div class="card shadow-sm mb-4">
-            <div class="card-body">
-
-                <h2 class="text-primary">
-                    Example
-                </h2>
-
-                <p>
-                    Consider a string containing spaces:
-                </p>
-
-                <div class="bg-dark text-white p-3 rounded mb-3">
-                    <code class="text-white">
-                        " &nbsp;&nbsp; apna &nbsp;&nbsp; "
-                    </code>
-                </div>
-
-                <p>
-                    After applying <strong>trim()</strong>:
-                </p>
-
-                <div class="alert alert-success">
-                    <code>'apna'</code>
-                </div>
-
-            </div>
-        </div>
-
-
-        <!-- Beginning and End -->
-        <div class="card shadow-sm mb-4">
-            <div class="card-body">
-
-                <h2 class="text-primary">
-                    What Does trim() Remove?
-                </h2>
-
-                <div class="row g-3">
-
-                    <div class="col-md-6">
-                        <div class="card border-warning h-100">
-                            <div class="card-body">
-                                <h5 class="text-warning">
-                                    Beginning
-                                </h5>
-
-                                <p>
-                                    Removes unnecessary whitespace
-                                    from the beginning of a string.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="card border-warning h-100">
-                            <div class="card-body">
-                                <h5 class="text-warning">
-                                    End
-                                </h5>
-
-                                <p>
-                                    Removes unnecessary whitespace
-                                    from the end of a string.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="alert alert-warning mt-4 mb-0">
-                    <strong>Note:</strong>
-                    trim() does not remove spaces between words.
-                </div>
-
-            </div>
-        </div>
-
-
-        <!-- Strings are Immutable -->
-        <div class="card shadow-sm mb-4">
-            <div class="card-body">
-
-                <h2 class="text-primary">
-                    Strings are Immutable
-                </h2>
-
-                <p>
-                    Strings in JavaScript are
-                    <strong>immutable</strong>.
-                </p>
-
-                <p>
-                    This means that the original string cannot be
-                    changed directly.
-                </p>
-
-                <div class="alert alert-danger">
-                    <strong>Important:</strong>
-                    <code>trim()</code> does not change the original
-                    string.
-                </div>
-
-            </div>
-        </div>
-
-
-        <!-- Return Value -->
-        <div class="card shadow-sm mb-4">
-            <div class="card-body">
-
-                <h2 class="text-primary">
-                    trim() Returns a New String
-                </h2>
-
-                <p>
-                    The <strong>trim()</strong> method returns a
-                    <strong>new string</strong> after removing
-                    whitespace.
-                </p>
-
-                <div class="row g-3">
-
-                    <div class="col-md-6">
-
-                        <div class="card bg-light h-100">
-                            <div class="card-body">
-
-                                <h5>Original String</h5>
-
-                                <p>
-                                    <code>
-                                        " &nbsp; apna &nbsp; "
-                                    </code>
-                                </p>
-
-                                <p class="text-muted">
-                                    The original string remains unchanged.
-                                </p>
-
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="col-md-6">
-
-                        <div class="card bg-light h-100">
-                            <div class="card-body">
-
-                                <h5>New String</h5>
-
-                                <p>
-                                    <code>'apna'</code>
-                                </p>
-
-                                <p class="text-muted">
-                                    trim() returns the cleaned string.
-                                </p>
-
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-
-
-        <!-- Related Methods -->
-        <div class="card shadow-sm mb-4">
-            <div class="card-body">
-
-                <h2 class="text-primary">
-                    Related Methods
-                </h2>
-
-                <div class="table-responsive">
-
-                    <table class="table table-bordered table-striped mt-3">
-
-                        <thead class="table-primary">
-
-                            <tr>
-                                <th>Method</th>
-                                <th>Use</th>
-                            </tr>
-
-                        </thead>
-
-                        <tbody>
-
-                            <tr>
-                                <td>
-                                    <strong>trim()</strong>
-                                </td>
-
-                                <td>
-                                    Removes whitespace from both
-                                    beginning and end.
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>
-                                    <strong>trimStart()</strong>
-                                </td>
-
-                                <td>
-                                    Removes whitespace from the
-                                    beginning.
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>
-                                    <strong>trimEnd()</strong>
-                                </td>
-
-                                <td>
-                                    Removes whitespace from the end.
-                                </td>
-                            </tr>
-
-                        </tbody>
-
-                    </table>
-
-                </div>
-
-            </div>
-        </div>
-
-
-        <!-- Key Points -->
-        <div class="card shadow-sm mb-4">
-            <div class="card-body">
-
-                <h2 class="text-primary">
-                    Key Points
-                </h2>
-
-                <ul class="list-group">
-
-                    <li class="list-group-item">
-                        <strong>trim()</strong> removes whitespace
-                        from both sides.
-                    </li>
-
-                    <li class="list-group-item">
-                        It does not remove spaces between words.
-                    </li>
-
-                    <li class="list-group-item">
-                        Strings are <strong>immutable</strong>.
-                    </li>
-
-                    <li class="list-group-item">
-                        trim() does not modify the original string.
-                    </li>
-
-                    <li class="list-group-item">
-                        trim() returns a <strong>new string</strong>.
-                    </li>
-
-                </ul>
-
-            </div>
-        </div>
-
-
-        <!-- Summary -->
-        <div class="alert alert-success text-center shadow-sm">
-
-            <h4>
-                Remember
-            </h4>
-
-            <p class="mb-0">
-                <strong>trim() = Remove whitespace from both ends</strong>
-            </p>
-
-        </div>
-
+<div class="container py-5">
+
+    <div class="text-center mb-5">
+        <h1 class="display-5 fw-bold text-primary">JavaScript String & Array Methods</h1>
+        <p class="lead">Simple notes + examples for revision</p>
     </div>
 
-    <script src="index.js"></script>
+    <!-- STRING METHODS -->
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <h2 class="text-primary">1. trim()</h2>
+            <p><strong>What it does:</strong> Removes extra spaces from the beginning and end of a string.</p>
+            <pre class="bg-dark text-white p-3 rounded"><code>let msg = "   Hello   ";
+console.log(msg.trim());</code></pre>
+            <p class="mb-0"><strong>Output:</strong> <code>Hello</code></p>
+        </div>
+    </div>
 
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <h2 class="text-primary">2. trim() Does Not Change the Original String</h2>
+            <p><strong>What it does:</strong> <code>trim()</code> gives back a cleaned string. It does not change the original string.</p>
+            <pre class="bg-dark text-white p-3 rounded"><code>let msg = "apna   ";
+let str = msg.trim();
+
+console.log(msg);
+console.log(str);</code></pre>
+            <p class="mb-0"><strong>Remember:</strong> Original = <code>"apna   "</code>, New value = <code>"apna"</code></p>
+        </div>
+    </div>
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <h2 class="text-primary">3. toUpperCase() & toLowerCase()</h2>
+            <p><strong>What they do:</strong> Change all letters to uppercase or lowercase.</p>
+            <pre class="bg-dark text-white p-3 rounded"><code>let name = "Vishwa";
+
+console.log(name.toUpperCase());
+console.log(name.toLowerCase());</code></pre>
+            <p class="mb-0"><strong>Output:</strong> <code>VISHWA</code> and <code>vishwa</code></p>
+        </div>
+    </div>
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <h2 class="text-primary">4. indexOf()</h2>
+            <p><strong>What it does:</strong> Tells you where a value starts. If it is not found, it gives <code>-1</code>.</p>
+            <pre class="bg-dark text-white p-3 rounded"><code>let str = "ILoveCoding";
+
+console.log(str.indexOf("Love"));
+console.log(str.indexOf("J"));</code></pre>
+            <p class="mb-0"><strong>Output:</strong> <code>1</code> and <code>-1</code></p>
+        </div>
+    </div>
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <h2 class="text-primary">5. slice()</h2>
+            <p><strong>What it does:</strong> Takes out a part of a string or array. The ending index is not included.</p>
+            <pre class="bg-dark text-white p-3 rounded"><code>let msg = "Hello";
+
+console.log(msg.slice(0, 4));</code></pre>
+            <p class="mb-0"><strong>Output:</strong> <code>Hell</code></p>
+        </div>
+    </div>
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <h2 class="text-primary">6. Negative Index in slice()</h2>
+            <p><strong>What it does:</strong> A negative index starts counting from the end.</p>
+            <pre class="bg-dark text-white p-3 rounded"><code>let msg = "NationalServiceScheme";
+
+console.log(msg.slice(-1));
+console.log(msg.slice(-2));</code></pre>
+            <p class="mb-0"><strong>Output:</strong> <code>e</code> and <code>me</code></p>
+        </div>
+    </div>
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <h2 class="text-primary">7. replace()</h2>
+            <p><strong>What it does:</strong> Replaces a matching part of a string with something else.</p>
+            <pre class="bg-dark text-white p-3 rounded"><code>let msg = "Love";
+
+console.log(msg.replace("Love", "do"));
+console.log(msg.replace("o", "x"));</code></pre>
+            <p class="mb-0"><strong>Output:</strong> <code>do</code> and <code>Lxve</code></p>
+        </div>
+    </div>
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <h2 class="text-primary">8. repeat()</h2>
+            <p><strong>What it does:</strong> Repeats a string as many times as you tell it.</p>
+            <pre class="bg-dark text-white p-3 rounded"><code>let msg = "Love";
+
+console.log(msg.repeat(3));</code></pre>
+            <p class="mb-0"><strong>Output:</strong> <code>LoveLoveLove</code></p>
+        </div>
+    </div>
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <h2 class="text-primary">9. Method Chaining</h2>
+            <p><strong>What it does:</strong> Lets you use one method after another on the same value.</p>
+            <pre class="bg-dark text-white p-3 rounded"><code>let msg = " Help! ";
+
+console.log(msg.trim().toUpperCase());</code></pre>
+            <p class="mb-0"><strong>Output:</strong> <code>HELP!</code></p>
+        </div>
+    </div>
+
+    <!-- ARRAY METHODS -->
+    <div class="text-center my-5">
+        <h1 class="display-6 fw-bold text-success">Array Methods</h1>
+        <p class="lead">Working with multiple values</p>
+    </div>
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <h2 class="text-success">10. Creating and Accessing an Array</h2>
+            <p><strong>What it does:</strong> An array stores multiple values. We use an index to get a value.</p>
+            <pre class="bg-dark text-white p-3 rounded"><code>let students = ["Kannika", "Nitin", "Raju"];
+
+console.log(students[0]);
+console.log(students.length);
+console.log(students[0][0]);</code></pre>
+            <p class="mb-0"><strong>Output:</strong> <code>Kannika</code>, <code>3</code>, <code>K</code></p>
+        </div>
+    </div>
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <h2 class="text-success">11. Updating Array Elements</h2>
+            <p><strong>What it does:</strong> Use the index to change an existing value.</p>
+            <pre class="bg-dark text-white p-3 rounded"><code>let fruits = ["Mango", "Apple", "Litchi"];
+
+fruits[0] = "Banana";
+
+console.log(fruits);</code></pre>
+            <p class="mb-0"><strong>Result:</strong> <code>["Banana", "Apple", "Litchi"]</code></p>
+        </div>
+    </div>
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <h2 class="text-success">12. push() and pop()</h2>
+            <p><strong>push():</strong> Adds an element at the end.</p>
+            <p><strong>pop():</strong> Removes the last element.</p>
+            <pre class="bg-dark text-white p-3 rounded"><code>let cars = ["BMW", "THAR", "DEFENDER"];
+
+cars.push("Ferrari");
+console.log(cars);
+
+cars.pop();
+console.log(cars);</code></pre>
+        </div>
+    </div>
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <h2 class="text-success">13. unshift() and shift()</h2>
+            <p><strong>unshift():</strong> Adds an element at the beginning.</p>
+            <p><strong>shift():</strong> Removes the first element.</p>
+            <pre class="bg-dark text-white p-3 rounded"><code>let cars = ["BMW", "THAR", "DEFENDER"];
+
+cars.unshift("Ferrari");
+console.log(cars);
+
+cars.shift();
+console.log(cars);</code></pre>
+        </div>
+    </div>
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <h2 class="text-success">14. indexOf() and includes()</h2>
+            <p><strong>indexOf():</strong> Gives the index. If not found, it gives <code>-1</code>.</p>
+            <p><strong>includes():</strong> Checks whether the value exists and gives <code>true</code> or <code>false</code>.</p>
+            <pre class="bg-dark text-white p-3 rounded"><code>let cars = ["BMW", "THAR", "DEFENDER"];
+
+console.log(cars.indexOf("BMW"));
+console.log(cars.includes("BMW"));
+console.log(cars.includes("XUV"));</code></pre>
+        </div>
+    </div>
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <h2 class="text-success">15. slice() in Arrays</h2>
+            <p><strong>What it does:</strong> Takes out a part of an array without changing the original array.</p>
+            <pre class="bg-dark text-white p-3 rounded"><code>let cars = ["BMW", "THAR", "DEFENDER", "RANGEROVER"];
+
+console.log(cars.slice(1));
+console.log(cars.slice(1, 3));
+console.log(cars.slice(-2));</code></pre>
+        </div>
+    </div>
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <h2 class="text-success">16. concat()</h2>
+            <p><strong>What it does:</strong> Joins two arrays and gives a new array.</p>
+            <pre class="bg-dark text-white p-3 rounded"><code>let primary = ["Red", "Blue", "Green"];
+let secondary = ["Yellow", "Orange", "Purple"];
+
+let colors = primary.concat(secondary);
+
+console.log(colors);</code></pre>
+            <p class="mb-0"><strong>Important:</strong> The original arrays are not changed.</p>
+        </div>
+    </div>
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <h2 class="text-success">17. splice() - Remove Elements</h2>
+            <p><strong>What it does:</strong> Removes elements from the original array.</p>
+            <pre class="bg-dark text-white p-3 rounded"><code>let colors = ["Red", "Blue", "Green", "Yellow", "Orange"];
+
+console.log(colors.splice(3));
+console.log(colors);</code></pre>
+            <p class="mb-0"><strong>Here:</strong> <code>splice(3)</code> removes everything from index <code>3</code> onward.</p>
+        </div>
+    </div>
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <h2 class="text-success">18. splice() - Remove One Element</h2>
+            <p><strong>What it does:</strong> Removes a specific number of elements from a specific index.</p>
+            <pre class="bg-dark text-white p-3 rounded"><code>let colors = ["Red", "Blue", "Green", "Yellow"];
+
+console.log(colors.splice(1, 1));
+console.log(colors);</code></pre>
+            <p class="mb-0"><strong>Meaning:</strong> Start at index <code>1</code> and remove <code>1</code> element.</p>
+        </div>
+    </div>
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <h2 class="text-success">19. splice() - Remove and Add</h2>
+            <p><strong>What it does:</strong> Removes an element and adds new elements in its place.</p>
+            <pre class="bg-dark text-white p-3 rounded"><code>let colors = ["Red", "Blue", "Green", "Yellow"];
+
+console.log(colors.splice(2, 1, "Pink", "Lightgreen"));
+console.log(colors);</code></pre>
+            <p class="mb-0"><strong>Easy trick:</strong> <code>splice(index, deleteCount, newValue)</code> = remove + add/change.</p>
+        </div>
+    </div>
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <h2 class="text-success">20. splice() - Add Without Removing</h2>
+            <p><strong>What it does:</strong> Adds new elements at a particular position without deleting anything.</p>
+            <pre class="bg-dark text-white p-3 rounded"><code>let colors = ["Red", "Blue", "Green"];
+
+colors.splice(1, 0, "White", "Black");
+
+console.log(colors);</code></pre>
+            <p class="mb-0"><strong>Important:</strong> <code>0</code> means remove nothing.</p>
+        </div>
+    </div>
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <h2 class="text-success">21. reverse()</h2>
+            <p><strong>What it does:</strong> Reverses the order of the array.</p>
+            <pre class="bg-dark text-white p-3 rounded"><code>let colors = ["Red", "Blue", "Green"];
+
+console.log(colors.reverse());</code></pre>
+            <p class="mb-0"><strong>Important:</strong> <code>reverse()</code> changes the original array.</p>
+        </div>
+    </div>
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <h2 class="text-success">22. sort()</h2>
+            <p><strong>What it does:</strong> Sorts an array. For numbers, normal <code>sort()</code> treats them like strings.</p>
+            <pre class="bg-dark text-white p-3 rounded"><code>let num = [93, 53, 26, 31, 100];
+
+console.log(num.sort());</code></pre>
+            <p class="mb-0"><strong>Remember:</strong> <code>[100, 26, 31, 53, 93]</code> can happen because the values are compared like strings.</p>
+        </div>
+    </div>
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <h2 class="text-success">23. Array References</h2>
+            <p><strong>What it means:</strong> Two separate arrays with the same values are still different arrays.</p>
+            <pre class="bg-dark text-white p-3 rounded"><code>let arr1 = [1];
+let arr2 = [1];
+
+console.log(arr1 === arr2);</code></pre>
+            <p class="mb-0"><strong>Output:</strong> <code>false</code></p>
+        </div>
+    </div>
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <h2 class="text-success">24. Same Array Reference</h2>
+            <p><strong>What it means:</strong> If you do <code>let arrCopy = arr</code>, both variables point to the same array.</p>
+            <pre class="bg-dark text-white p-3 rounded"><code>let arr = ["a", "b"];
+let arrCopy = arr;
+
+arrCopy.push("c");
+
+console.log(arrCopy);
+console.log(arr);</code></pre>
+            <p class="mb-0">Both show <code>["a", "b", "c"]</code> because they refer to the same array.</p>
+        </div>
+    </div>
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <h2 class="text-success">25. Constant Array</h2>
+            <p><strong>What it means:</strong> With <code>const</code>, you cannot assign a completely new array, but you can change the contents.</p>
+            <pre class="bg-dark text-white p-3 rounded"><code>const array = [1, 2, 3];
+
+array.push(4);
+console.log(array);
+
+array.pop();
+console.log(array);
+
+// array = [5, 6, 7]; // ❌ Not allowed</code></pre>
+            <p class="mb-0"><strong>Easy trick:</strong> <code>const</code> locks the reference, not the array contents.</p>
+        </div>
+    </div>
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <h2 class="text-success">26. Nested Arrays</h2>
+            <p><strong>What it means:</strong> An array can contain other arrays.</p>
+            <pre class="bg-dark text-white p-3 rounded"><code>let nums = [[2, 4], [6, 8], [1, 3]];
+
+console.log(nums);
+console.log(nums.length);
+console.log(nums[0]);
+console.log(nums[0][0]);</code></pre>
+            <p class="mb-0"><strong>Think like:</strong> <code>nums[row][column]</code></p>
+        </div>
+    </div>
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <h2 class="text-success">27. Nested Array - Tic-Tac-Toe</h2>
+            <p><strong>What it does:</strong> A nested array can be used to represent rows and columns of a game board.</p>
+            <pre class="bg-dark text-white p-3 rounded"><code>let game = [
+    ["X", null, "O"],
+    [" ", null, " "],
+    ["O", null, "X"]
+];
+
+console.log(game);</code></pre>
+            <p class="mb-0">Here, each inner array represents one row of the board.</p>
+        </div>
+    </div>
+
+    <div class="alert alert-success text-center shadow-sm">
+        <h4>Quick Revision</h4>
+        <p class="mb-0">
+            <strong>slice()</strong> → take a part &nbsp; |
+            <strong>splice()</strong> → remove/add/change &nbsp; |
+            <strong>push()</strong> → add at end &nbsp; |
+            <strong>pop()</strong> → remove from end &nbsp; |
+            <strong>shift()</strong> → remove from start &nbsp; |
+            <strong>unshift()</strong> → add at start
+        </p>
+    </div>
+
+</div>
+
+<script src="index.js"></script>
 </body>
 </html>
