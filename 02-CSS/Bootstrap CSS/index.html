@@ -1,972 +1,1276 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMW — The Evolution</title>
 
-    <meta charset="UTF-8">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+  <style>
+    :root{
+      --blue:#1e7cff;
+      --bg:#030303;
+      --card:#0e0e0f;
+      --muted:#999;
+      --line:rgba(255,255,255,.1);
+    }
 
-    <title>BMW - Bootstrap Practice</title>
+    *{box-sizing:border-box}
 
-    <!-- Bootstrap CSS -->
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-    >
+    html{scroll-behavior:smooth}
 
-    <style>
+    body{
+      margin:0;
+      background:var(--bg);
+      color:#fff;
+      font-family:Arial,Helvetica,sans-serif;
+      overflow-x:hidden;
+    }
 
-        body {
-            padding-top: 70px;
-            background-color: #f4f6f8;
-        }
+    body, a, button{cursor:default}
+    a{cursor:pointer;text-decoration:none}
 
-        .hero {
-            background: linear-gradient(135deg, #000000, #212529);
-            color: white;
-            padding: 100px 0;
-        }
+    .navbar{
+      background:rgba(0,0,0,.78)!important;
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid var(--line);
+    }
 
-        .hero img {
-            width: 100%;
-            max-height: 450px;
-            object-fit: cover;
-            border-radius: 15px;
-        }
+    .navbar-brand{
+      font-weight:900;
+      letter-spacing:4px;
+    }
 
-        .section-title {
-            font-weight: 700;
-            margin-bottom: 30px;
-        }
+    .nav-link{
+      color:#bbb!important;
+      margin-left:14px;
+    }
 
-        .info-card {
-            border: none;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        }
+    .nav-link:hover{color:#fff!important}
 
-        .info-box {
-            padding: 25px;
-            border-radius: 12px;
-            height: 100%;
-        }
+    /* ================= HERO ================= */
 
-        .component-box {
-            background-color: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
-        }
+    .hero{
+      min-height:100vh;
+      position:relative;
+      display:flex;
+      align-items:center;
+      overflow:hidden;
+      background:#000;
+    }
 
-        footer {
-            margin-top: 50px;
-        }
+    .hero-video{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      opacity:.42;
+      filter:saturate(.8) contrast(1.08);
+    }
 
-    </style>
+    .hero-overlay{
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(90deg,rgba(0,0,0,.88),rgba(0,0,0,.48),rgba(0,0,0,.72)),
+        linear-gradient(0deg,#030303 0%,transparent 40%,rgba(0,0,0,.25) 100%);
+    }
 
+    .hero-content{
+      position:relative;
+      z-index:2;
+      padding-top:70px;
+    }
+
+    .eyebrow{
+      color:var(--blue);
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:5px;
+      text-transform:uppercase;
+    }
+
+    .hero-title{
+      margin:20px 0 0;
+      font-size:clamp(4.5rem,13vw,13rem);
+      font-weight:900;
+      letter-spacing:-11px;
+      line-height:.78;
+    }
+
+    .hero-title span{color:var(--blue)}
+
+    .hero-copy{
+      max-width:650px;
+      margin-top:35px;
+      color:#b4b4b4;
+      font-size:1.1rem;
+      line-height:1.8;
+    }
+
+    .start{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      margin-top:32px;
+      padding:15px 24px;
+      border-radius:999px;
+      background:#fff;
+      color:#000;
+      font-weight:800;
+    }
+
+    .start:hover{
+      background:var(--blue);
+      color:#fff;
+    }
+
+    /* ================= SECTIONS ================= */
+
+    section{padding:120px 0}
+
+    .dark{background:#060606}
+    .darker{background:#020202}
+
+    .section-title{
+      font-size:clamp(3.5rem,8vw,8rem);
+      font-weight:900;
+      letter-spacing:-6px;
+      line-height:.86;
+    }
+
+    .story{
+      max-width:720px;
+      color:var(--muted);
+      line-height:1.9;
+      font-size:1.05rem;
+    }
+
+    /* ================= TIMELINE ================= */
+
+    .timeline{
+      position:relative;
+      max-width:1100px;
+      margin:70px auto 0;
+    }
+
+    .timeline:before{
+      content:"";
+      position:absolute;
+      left:50%;
+      top:0;
+      bottom:0;
+      width:2px;
+      background:linear-gradient(#000,var(--blue),#000);
+    }
+
+    .event{
+      position:relative;
+      width:50%;
+      padding:25px 32px;
+    }
+
+    .event:nth-child(even){
+      margin-left:50%;
+    }
+
+    .dot{
+      width:14px;
+      height:14px;
+      position:absolute;
+      top:50px;
+      background:var(--blue);
+      border-radius:50%;
+      box-shadow:0 0 0 6px rgba(30,124,255,.14);
+    }
+
+    .event:nth-child(odd) .dot{right:-7px}
+    .event:nth-child(even) .dot{left:-7px}
+
+    .event-card{
+      background:linear-gradient(145deg,#121212,#090909);
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:28px;
+    }
+
+    .event-card:hover{
+      border-color:rgba(30,124,255,.65);
+      transform:translateY(-6px);
+      transition:.3s;
+    }
+
+    .year{
+      font-size:3.8rem;
+      font-weight:900;
+      color:var(--blue);
+      line-height:.9;
+    }
+
+    .event-card h3{
+      margin-top:15px;
+      font-weight:800;
+    }
+
+    .event-card p{
+      margin-top:12px;
+      color:#999;
+      line-height:1.7;
+    }
+
+    /* ================= MEDIA ================= */
+
+    .media-frame{
+      margin-top:30px;
+      border-radius:18px;
+      overflow:hidden;
+      background:#000;
+      border:1px solid var(--line);
+    }
+
+    .media-frame img{
+      width:100%;
+      height:320px;
+      object-fit:cover;
+      display:block;
+    }
+
+    .media-source{
+      padding:14px 16px;
+      background:#101010;
+      color:#8db8ff;
+      font-size:12px;
+    }
+
+    .media-source a{color:#8db8ff}
+
+    /* ================= VIDEO ================= */
+
+    .video-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:24px;
+      margin-top:55px;
+    }
+
+    .video-card{
+      overflow:hidden;
+      border:1px solid var(--line);
+      border-radius:22px;
+      background:#0d0d0d;
+    }
+
+    .video-card.wide{
+      grid-column:1 / -1;
+    }
+
+    .video-card video{
+      width:100%;
+      aspect-ratio:16/9;
+      display:block;
+      object-fit:cover;
+      background:#000;
+    }
+
+    .video-info{
+      padding:18px 20px;
+    }
+
+    .video-info h3{
+      font-size:1.1rem;
+      margin:0;
+      font-weight:800;
+    }
+
+    .video-info p{
+      margin:8px 0 0;
+      color:#888;
+      font-size:13px;
+    }
+
+    .video-info a{
+      display:inline-block;
+      margin-top:12px;
+      color:#7fb0ff;
+      font-size:12px;
+    }
+
+    /* ================= M ================= */
+
+    .m-section{
+      min-height:90vh;
+      display:flex;
+      align-items:center;
+      background:
+        radial-gradient(circle at 25% 50%,rgba(255,0,0,.09),transparent 22%),
+        radial-gradient(circle at 75% 50%,rgba(30,124,255,.1),transparent 27%),
+        #020202;
+    }
+
+    .m-title{
+      font-size:clamp(10rem,25vw,25rem);
+      line-height:.55;
+      font-weight:900;
+      letter-spacing:-15px;
+    }
+
+    /* ================= CURRENT BMW ================= */
+
+    .current{
+      background:
+        radial-gradient(circle at 70% 30%,rgba(30,124,255,.13),transparent 30%),
+        #050608;
+    }
+
+    .model-card{
+      height:100%;
+      overflow:hidden;
+      border:1px solid var(--line);
+      border-radius:22px;
+      background:#0d0e10;
+      transition:.35s;
+    }
+
+    .model-card:hover{
+      transform:translateY(-8px);
+      border-color:rgba(30,124,255,.55);
+    }
+
+    .model-card img{
+      width:100%;
+      height:330px;
+      object-fit:cover;
+      display:block;
+    }
+
+    .model-info{
+      padding:24px;
+    }
+
+    .model-info h3{
+      font-weight:800;
+    }
+
+    .model-info p{
+      color:#999;
+      line-height:1.7;
+    }
+
+    .source-pill{
+      display:inline-block;
+      margin-top:5px;
+      padding:8px 12px;
+      border-radius:20px;
+      background:#141414;
+      border:1px solid rgba(255,255,255,.1);
+      color:#8db8ff;
+      font-size:12px;
+    }
+
+    .source-pill:hover{
+      color:#fff;
+      border-color:var(--blue);
+    }
+
+    /* ================= FINAL ================= */
+
+    .final{
+      min-height:90vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      background:
+        radial-gradient(circle,rgba(30,124,255,.14),transparent 40%),
+        #020202;
+    }
+
+    .final-title{
+      font-size:clamp(4rem,11vw,11rem);
+      line-height:.82;
+      letter-spacing:-8px;
+      font-weight:900;
+    }
+
+    .final-title span{color:var(--blue)}
+
+    footer{
+      padding:42px 0;
+      background:#000;
+      text-align:center;
+      color:#666;
+      border-top:1px solid var(--line);
+    }
+
+    @media(max-width:768px){
+
+      .hero-title{
+        letter-spacing:-5px;
+      }
+
+      .section-title{
+        letter-spacing:-3px;
+      }
+
+      .timeline:before{left:8px}
+
+      .event{
+        width:100%;
+        margin-left:0!important;
+        padding-left:38px;
+      }
+
+      .event:nth-child(odd) .dot,
+      .event:nth-child(even) .dot{
+        left:1px;
+        right:auto;
+      }
+
+      .video-grid{
+        grid-template-columns:1fr;
+      }
+
+      .video-card.wide{
+        grid-column:auto;
+      }
+
+      .model-card img{
+        height:260px;
+      }
+
+      .m-title{
+        letter-spacing:-8px;
+      }
+    }
+  </style>
 </head>
-
 
 <body>
 
+<!-- ================= NAVBAR ================= -->
 
-    <!-- ================= NAVBAR ================= -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="#home">BMW</a>
 
-        <div class="container">
+    <button
+      class="navbar-toggler"
+      data-bs-toggle="collapse"
+      data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="nav" class="collapse navbar-collapse">
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link" href="#story">Story</a>
+        <a class="nav-link" href="#history">History</a>
+        <a class="nav-link" href="#motion">Motion</a>
+        <a class="nav-link" href="#m">M</a>
+        <a class="nav-link" href="#current">Today</a>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section id="home" class="hero">
+
+  <video
+    class="hero-video"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="metadata"
+    poster="https://images.pexels.com/videos/16532416/bmw-fast-car-freeway-moving-car-16532416.jpeg?auto=compress&dpr=1&h=750&w=1260">
+
+    <source
+      src="https://videos.pexels.com/video-files/16532416/16532416-hd_1920_1080_60fps.mp4"
+      type="video/mp4">
+
+  </video>
+
+  <div class="hero-overlay"></div>
+
+  <div class="container hero-content">
+
+    <div class="eyebrow">
+      1916 → 2026
+    </div>
+
+    <h1 class="hero-title">
+      BMW<br>
+      <span>EVOLUTION</span>
+    </h1>
+
+    <p class="hero-copy">
+      One brand. More than a century of engines,
+      motorcycles, automobiles, motorsport and
+      electric mobility.
+      <br><br>
+      Scroll through the story.
+    </p>
+
+    <a href="#story" class="start">
+      START THE JOURNEY ↓
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- ================= STORY ================= -->
+
+<section id="story" class="dark">
+
+  <div class="container">
+
+    <div class="eyebrow">
+      Chapter 01 • The Beginning
+    </div>
+
+    <h2 class="section-title mt-3">
+      BEFORE<br>
+      THE CARS.
+    </h2>
+
+    <p class="story mt-4">
+      BMW's story begins with aviation-related engine production.
+      Motorcycles followed in the 1920s, and automobile production
+      became a major part of the company's identity.
+      <br><br>
+      This site follows that transformation instead of presenting
+      BMW as if it had always been a car company.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- ================= HISTORY ================= -->
+
+<section id="history" class="darker">
+
+  <div class="container">
+
+    <div class="text-center">
+
+      <div class="eyebrow">
+        Chapter 02 • The Timeline
+      </div>
+
+      <h2 class="section-title mt-3">
+        THE JOURNEY
+      </h2>
+
+      <p class="story mx-auto mt-4">
+        The visuals below use direct web images. The source buttons open
+        the original page rather than depending on Pinterest's embed system.
+      </p>
+
+    </div>
+
+
+    <div class="timeline">
+
+
+      <div class="event">
+
+        <div class="dot"></div>
+
+        <div class="event-card">
+
+          <div class="year">
+            1916
+          </div>
+
+          <h3>
+            THE BEGINNING
+          </h3>
+
+          <p>
+            BMW's roots are associated with aircraft-engine
+            manufacturing in the early years of the company.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="event">
+
+        <div class="dot"></div>
+
+        <div class="event-card">
+
+          <div class="year">
+            1923
+          </div>
+
+          <h3>
+            BMW R 32
+          </h3>
+
+          <p>
+            BMW enters motorcycle production with the R 32.
+          </p>
+
+          <div class="media-frame">
+
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/4/4b/BMW_R32.jpg"
+              alt="BMW R 32"
+              loading="lazy"
+              onerror="this.style.display='none'">
+
+            <div class="media-source">
+              Image source:
+              <a
+                href="https://commons.wikimedia.org/wiki/Category:BMW_R32"
+                target="_blank">
+                Wikimedia Commons
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="event">
+
+        <div class="dot"></div>
+
+        <div class="event-card">
+
+          <div class="year">
+            1928
+          </div>
+
+          <h3>
+            FOUR WHEELS
+          </h3>
+
+          <p>
+            BMW enters automobile production after acquiring
+            the Fahrzeugfabrik Eisenach operation.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="event">
+
+        <div class="dot"></div>
+
+        <div class="event-card">
+
+          <div class="year">
+            1936
+          </div>
+
+          <h3>
+            BMW 328
+          </h3>
+
+          <p>
+            The BMW 328 becomes an important early sporting car
+            in the company's history.
+          </p>
+
+          <div class="media-frame">
+
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/7/7a/BMW_328_1939.jpg"
+              alt="BMW 328"
+              loading="lazy"
+              onerror="this.style.display='none'">
+
+            <div class="media-source">
+              Image source:
+              <a
+                href="https://commons.wikimedia.org/wiki/Category:BMW_328"
+                target="_blank">
+                Wikimedia Commons
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="event">
+
+        <div class="dot"></div>
+
+        <div class="event-card">
+
+          <div class="year">
+            1975
+          </div>
+
+          <h3>
+            3 SERIES
+          </h3>
+
+          <p>
+            The first-generation 3 Series starts one of BMW's
+            defining model families.
+          </p>
+
+          <div class="media-frame">
+
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/6/66/BMW_315_E21.jpg"
+              alt="BMW E21"
+              loading="lazy"
+              onerror="this.style.display='none'">
+
+            <div class="media-source">
+              Image source:
+              <a
+                href="https://commons.wikimedia.org/wiki/Category:BMW_E21"
+                target="_blank">
+                Wikimedia Commons
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="event">
+
+        <div class="dot"></div>
+
+        <div class="event-card">
+
+          <div class="year">
+            1986
+          </div>
+
+          <h3>
+            M3
+          </h3>
+
+          <p>
+            BMW M's road-car story grows around the M3,
+            beginning with the E30 generation.
+          </p>
+
+          <div class="media-frame">
+
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/1/19/BMW_E30_M3_front_20071024.jpg"
+              alt="BMW E30 M3"
+              loading="lazy"
+              onerror="this.style.display='none'">
+
+            <div class="media-source">
+              Image source:
+              <a
+                href="https://commons.wikimedia.org/wiki/Category:BMW_E30_M3"
+                target="_blank">
+                Wikimedia Commons
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="event">
+
+        <div class="dot"></div>
+
+        <div class="event-card">
+
+          <div class="year">
+            1999
+          </div>
+
+          <h3>
+            X5
+          </h3>
+
+          <p>
+            BMW expands its range into the premium SUV/SAV segment.
+          </p>
+
+          <div class="media-frame">
+
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/4/45/2001_BMW_X5_3.0i.jpg"
+              alt="BMW X5"
+              loading="lazy"
+              onerror="this.style.display='none'">
+
+            <div class="media-source">
+              Image source:
+              <a
+                href="https://commons.wikimedia.org/wiki/Category:BMW_E53"
+                target="_blank">
+                Wikimedia Commons
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= NON-YOUTUBE VIDEOS ================= -->
+
+<section id="motion" class="video-section dark">
+
+  <div class="container">
+
+    <div class="eyebrow">
+      Chapter 03 • Motion
+    </div>
+
+    <h2 class="section-title mt-3">
+      BMW<br>
+      IN MOTION
+    </h2>
+
+    <p class="story mt-4">
+      No YouTube players here. These are direct MP4 files from Pexels,
+      loaded with the browser's native HTML5 video player.
+    </p>
+
+
+    <div class="video-grid">
+
+
+      <article class="video-card">
+
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          controls
+          preload="metadata"
+          poster="https://images.pexels.com/videos/16532416/bmw-fast-car-freeway-moving-car-16532416.jpeg?auto=compress&dpr=1&h=750&w=1260">
+
+          <source
+            src="https://videos.pexels.com/video-files/16532416/16532416-hd_1920_1080_60fps.mp4"
+            type="video/mp4">
+
+        </video>
+
+        <div class="video-info">
+
+          <h3>
+            BMW on the road
+          </h3>
+
+          <p>
+            Direct MP4 • Pexels
+          </p>
+
+          <a
+            href="https://www.pexels.com/video/a-black-bmw-car-driving-down-the-road-16532416/"
+            target="_blank">
+            Open source page ↗
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article class="video-card">
+
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          controls
+          preload="metadata">
+
+          <source
+            src="https://videos.pexels.com/video-files/30678639/13127448_1920_1080_60fps.mp4"
+            type="video/mp4">
+
+        </video>
+
+        <div class="video-info">
+
+          <h3>
+            BMW M3 cinematic showcase
+          </h3>
+
+          <p>
+            1920 × 1080 • Pexels
+          </p>
+
+          <a
+            href="https://www.pexels.com/video/sleek-bmw-m3-showcasing-innovative-design-30678639/"
+            target="_blank">
+            Open source page ↗
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article class="video-card wide">
+
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          controls
+          preload="metadata">
+
+          <source
+            src="https://videos.pexels.com/video-files/26262653/11943671_2160_3840_60fps.mp4"
+            type="video/mp4">
+
+        </video>
+
+        <div class="video-info">
+
+          <h3>
+            BMW M2 action
+          </h3>
+
+          <p>
+            Direct MP4 • Pexels
+          </p>
+
+          <a
+            href="https://www.pexels.com/video/a-yellow-bmw-m2-is-parked-on-the-side-of-the-road-26262653/"
+            target="_blank">
+            Open source page ↗
+          </a>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= M ================= -->
+
+<section id="m" class="m-section">
+
+  <div class="container">
+
+    <div class="eyebrow">
+      Chapter 04 • Motorsport
+    </div>
+
+    <div class="m-title">
+      M
+    </div>
+
+    <h2 class="display-4 fw-bold">
+      MOTORSPORT
+    </h2>
+
+    <p class="story mt-4">
+      From racing technology to road cars, BMW M became
+      a major part of the performance story.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- ================= CURRENT BMW ================= -->
+
+<section id="current" class="current">
+
+  <div class="container">
+
+    <div class="text-center">
+
+      <div class="eyebrow">
+        Chapter 05 • 2025 → 2026
+      </div>
+
+      <h2 class="section-title mt-3">
+        BMW<br>
+        TODAY
+      </h2>
+
+      <p class="story mx-auto mt-4">
+        Now the timeline switches to current BMW PressClub photography.
+        These are real recent BMW media assets, not placeholder stock images.
+      </p>
+
+    </div>
+
+
+    <div class="row g-4 mt-5">
+
+
+      <!-- iX3 -->
+
+      <div class="col-lg-6">
+
+        <article class="model-card">
+
+          <img
+            src="https://mediapool.bmwgroup.com/download/edown/pressclub/publicq?actEvent=scaleBig&attachment=1&dokNo=P90615624&quality=90&square=0"
+            alt="New BMW iX3 50 xDrive"
+            loading="lazy">
+
+          <div class="model-info">
+
+            <h3>
+              NEW BMW iX3
+            </h3>
+
+            <p>
+              The first series-production Neue Klasse model.
+              BMW introduced it in September 2025.
+            </p>
 
             <a
-                href="#home"
-                class="navbar-brand fw-bold"
-            >
-                BMW
+              class="source-pill"
+              href="https://www.press.bmwgroup.com/japan/photo/detail/P90615624/The-new-BMW-iX3-50-xDrive-09-2025"
+              target="_blank">
+              BMW PressClub ↗
             </a>
 
+          </div>
 
-            <!-- Navbar Toggle Button -->
+        </article>
 
-            <button
-                class="navbar-toggler"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarNav"
-            >
+      </div>
 
-                <span class="navbar-toggler-icon"></span>
 
-            </button>
+      <!-- i3 -->
 
+      <div class="col-lg-6">
 
-            <!-- Navbar Links -->
+        <article class="model-card">
 
-            <div
-                class="collapse navbar-collapse"
-                id="navbarNav"
-            >
+          <img
+            src="https://mediapool.bmwgroup.com/download/edown/pressclub/publicq?actEvent=scaleBig&attachment=1&dokNo=P90632437&quality=90&square=0"
+            alt="New BMW i3 50 xDrive"
+            loading="lazy">
 
-                <div class="navbar-nav ms-auto">
+          <div class="model-info">
 
-                    <a
-                        class="nav-link"
-                        href="#home"
-                    >
-                        Home
-                    </a>
+            <h3>
+              NEW BMW i3
+            </h3>
 
-                    <a
-                        class="nav-link"
-                        href="#about"
-                    >
-                        About BMW
-                    </a>
-
-                    <a
-                        class="nav-link"
-                        href="#grid"
-                    >
-                        Grid
-                    </a>
-
-                    <a
-                        class="nav-link"
-                        href="#components"
-                    >
-                        Components
-                    </a>
-
-                    <a
-                        class="nav-link"
-                        href="#form"
-                    >
-                        Form
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </nav>
-
-
-
-    <!-- ================= HERO ================= -->
-
-    <section
-        id="home"
-        class="hero"
-    >
-
-        <div class="container">
-
-            <div class="row align-items-center g-5">
-
-                <div class="col-lg-6">
-
-                    <span class="badge bg-primary mb-3">
-                        BMW
-                    </span>
-
-                    <h1 class="display-3 fw-bold">
-                        The Ultimate Driving Machine
-                    </h1>
-
-                    <p class="lead mt-3">
-                        BMW is a German automobile manufacturer
-                        known for luxury vehicles, sporty driving
-                        performance and advanced technology.
-                    </p>
-
-                    <a
-                        href="#about"
-                        class="btn btn-primary btn-lg mt-3"
-                    >
-                        Learn About BMW
-                    </a>
-
-                </div>
-
-
-                <div class="col-lg-6">
-
-                    <img
-                        src="BMW.jpg"
-                        class="img-fluid"
-                        alt="BMW Car"
-                    >
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- ================= ABOUT BMW ================= -->
-
-    <section
-        id="about"
-        class="py-5"
-    >
-
-        <div class="container">
-
-            <h2 class="text-center section-title">
-                About BMW
-            </h2>
-
-            <div class="row justify-content-center">
-
-                <div class="col-lg-10">
-
-                    <div class="info-card card">
-
-                        <img
-                            src="BMW.jpg"
-                            class="card-img-top"
-                            alt="BMW Car"
-                        >
-
-                        <div class="card-body p-4">
-
-                            <h3 class="card-title">
-                                BMW Automobile
-                            </h3>
-
-                            <p class="card-text">
-                                BMW stands for Bayerische Motoren Werke.
-                                It is a German company that produces
-                                luxury cars, motorcycles and other
-                                mobility products.
-                            </p>
-
-                            <p class="card-text">
-                                BMW cars are well known for their
-                                combination of performance, comfort,
-                                technology and premium design.
-                                The company produces different
-                                categories of vehicles including
-                                sedans, SUVs, coupes and electric
-                                vehicles.
-                            </p>
-
-                            <a
-                                href="#grid"
-                                class="btn btn-dark"
-                            >
-                                Explore BMW Features
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- ================= BMW FEATURES ================= -->
-
-    <section
-        id="grid"
-        class="py-5 bg-light"
-    >
-
-        <div class="container">
-
-            <h2 class="text-center section-title">
-                BMW Features
-            </h2>
-
-            <p class="text-center mb-5">
-                Here we use the Bootstrap Grid System to
-                arrange information into responsive columns.
+            <p>
+              The second model of the Neue Klasse,
+              with official BMW imagery published in March 2026.
             </p>
 
+            <a
+              class="source-pill"
+              href="https://www.press.bmwgroup.com/global/photo/detail/P90632437/The-new-BMW-i3-50-xDrive-03-26"
+              target="_blank">
+              BMW PressClub ↗
+            </a>
 
-            <div class="row g-4">
+          </div>
 
+        </article>
 
-                <!-- Performance -->
-
-                <div class="col-md-6 col-xl-4">
-
-                    <div class="info-box bg-dark text-white">
-
-                        <h4>
-                            Performance
-                        </h4>
-
-                        <p>
-                            BMW focuses on responsive handling,
-                            powerful engines and an engaging
-                            driving experience.
-                        </p>
-
-                    </div>
-
-                </div>
+      </div>
 
 
-                <!-- Design -->
+      <!-- 7 SERIES -->
 
-                <div class="col-md-6 col-xl-4">
+      <div class="col-lg-6">
 
-                    <div class="info-box bg-primary text-white">
+        <article class="model-card">
 
-                        <h4>
-                            Design
-                        </h4>
+          <img
+            src="https://mediapool.bmwgroup.com/download/edown/pressclub/publicq?actEvent=scaleBig&attachment=1&dokNo=P90636058&quality=90&square=0"
+            alt="BMW 740 xDrive 2026"
+            loading="lazy">
 
-                        <p>
-                            BMW vehicles combine modern styling
-                            with distinctive design elements
-                            and a premium interior.
-                        </p>
+          <div class="model-info">
 
-                    </div>
+            <h3>
+              BMW 7 SERIES
+            </h3>
 
-                </div>
-
-
-                <!-- Technology -->
-
-                <div class="col-md-6 col-xl-4">
-
-                    <div class="info-box bg-secondary text-white">
-
-                        <h4>
-                            Technology
-                        </h4>
-
-                        <p>
-                            Modern BMW vehicles include digital
-                            displays, driver assistance systems
-                            and connected technology.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- ================= RESPONSIVE GRID ================= -->
-
-    <section class="py-5">
-
-        <div class="container">
-
-            <h2 class="text-center section-title">
-                BMW Models
-            </h2>
-
-            <p class="text-center mb-4">
-                Bootstrap's grid uses 12 columns. The following
-                example changes its layout according to screen size.
+            <p>
+              The 2026 BMW 7 Series chapter represents
+              the current flagship luxury side of the story.
             </p>
 
+            <a
+              class="source-pill"
+              href="https://www.press.bmwgroup.com/global/photo/detail/P90636058"
+              target="_blank">
+              BMW PressClub ↗
+            </a>
 
-            <div class="row g-3">
+          </div>
 
+        </article>
 
-                <div class="col-md-6 col-xl-4">
-
-                    <div class="component-box">
-
-                        <h4>
-                            BMW 3 Series
-                        </h4>
-
-                        <p>
-                            A sporty luxury sedan known for its
-                            balance between everyday comfort
-                            and driving performance.
-                        </p>
-
-                        <span class="badge bg-primary">
-                            Sedan
-                        </span>
-
-                    </div>
-
-                </div>
+      </div>
 
 
-                <div class="col-md-6 col-xl-4">
+      <!-- M2 CS -->
 
-                    <div class="component-box">
+      <div class="col-lg-6">
 
-                        <h4>
-                            BMW 5 Series
-                        </h4>
+        <article class="model-card">
 
-                        <p>
-                            A premium executive sedan offering
-                            luxury, technology and strong
-                            performance.
-                        </p>
+          <img
+            src="https://mediapool.bmwgroup.com/download/edown/pressclub/publicq?actEvent=scaleBig&attachment=1&dokNo=P90600855&quality=90&square=0"
+            alt="BMW M2 CS"
+            loading="lazy">
 
-                        <span class="badge bg-success">
-                            Luxury
-                        </span>
+          <div class="model-info">
 
-                    </div>
+            <h3>
+              BMW M2 CS
+            </h3>
 
-                </div>
-
-
-                <div class="col-md-6 col-xl-4">
-
-                    <div class="component-box">
-
-                        <h4>
-                            BMW X5
-                        </h4>
-
-                        <p>
-                            A luxury SUV that combines spaciousness,
-                            comfort, technology and performance.
-                        </p>
-
-                        <span class="badge bg-warning text-dark">
-                            SUV
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- ================= VERTICAL ALIGNMENT ================= -->
-
-    <section class="py-5 bg-light">
-
-        <div class="container">
-
-            <h2 class="text-center section-title">
-                Grid Vertical Alignment
-            </h2>
-
-            <p class="text-center mb-4">
-                Bootstrap's
-                <strong>align-items-end</strong>
-                places the columns at the bottom of the row.
+            <p>
+              A current BMW M performance model with
+              official BMW PressClub photography.
             </p>
 
+            <a
+              class="source-pill"
+              href="https://www.press.bmwgroup.com/india/photo/detail/P90600855/The-new-BMW-M2-CS"
+              target="_blank">
+              BMW PressClub ↗
+            </a>
 
-            <div
-                class="row align-items-end g-3"
-                style="min-height: 300px;"
-            >
+          </div>
 
-                <div class="col">
+        </article>
 
-                    <div class="info-box bg-primary text-white">
+      </div>
 
-                        <h5>
-                            BMW
-                        </h5>
 
-                        <p class="mb-0">
-                            Performance
-                        </p>
+      <!-- 3 SERIES PROTOTYPE -->
 
-                    </div>
+      <div class="col-12">
 
-                </div>
+        <article class="model-card">
 
+          <img
+            src="https://mediapool.bmwgroup.com/download/edown/pressclub/publicq?actEvent=scaleBig&attachment=1&dokNo=P90651567&quality=90&square=0"
+            alt="New BMW 3 Series prototype"
+            loading="lazy">
 
-                <div class="col">
+          <div class="model-info">
 
-                    <div class="info-box bg-dark text-white">
+            <h3>
+              NEXT BMW 3 SERIES
+            </h3>
 
-                        <h5>
-                            BMW
-                        </h5>
-
-                        <p class="mb-0">
-                            Luxury and comfort
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="col">
-
-                    <div class="info-box bg-secondary text-white">
-
-                        <h5>
-                            BMW
-                        </h5>
-
-                        <p class="mb-0">
-                            Technology
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="col">
-
-                    <div class="info-box bg-success text-white">
-
-                        <h5>
-                            BMW
-                        </h5>
-
-                        <p class="mb-0">
-                            Innovation
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- ================= BUTTONS & BADGES ================= -->
-
-    <section
-        id="components"
-        class="py-5"
-    >
-
-        <div class="container">
-
-            <h2 class="text-center section-title">
-                Bootstrap Components
-            </h2>
-
-
-            <!-- Button Group -->
-
-            <div class="component-box mb-4">
-
-                <h4>
-                    Button Group
-                </h4>
-
-                <p>
-                    The
-                    <strong>btn-group</strong>
-                    class groups multiple buttons together.
-                </p>
-
-
-                <div class="btn-group">
-
-                    <button class="btn btn-outline-primary">
-                        BMW
-                    </button>
-
-                    <button class="btn btn-outline-dark">
-                        Cars
-                    </button>
-
-                    <button class="btn btn-outline-secondary">
-                        Models
-                    </button>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- Buttons -->
-
-            <div class="component-box mb-4">
-
-                <h4>
-                    Buttons
-                </h4>
-
-                <p>
-                    Bootstrap provides predefined button
-                    classes such as primary, danger, warning,
-                    success and outline buttons.
-                </p>
-
-
-                <button class="btn btn-primary me-2">
-                    Explore
-                </button>
-
-                <button class="btn btn-dark me-2">
-                    BMW Cars
-                </button>
-
-                <button class="btn btn-outline-primary">
-                    Details
-                </button>
-
-            </div>
-
-
-
-            <!-- Badges -->
-
-            <div class="component-box mb-4">
-
-                <h4>
-                    BMW Categories
-                </h4>
-
-                <p>
-                    Badges are small labels used to show
-                    additional information.
-                </p>
-
-
-                <span class="badge bg-primary me-2">
-                    Luxury
-                </span>
-
-                <span class="badge bg-success me-2">
-                    Performance
-                </span>
-
-                <span class="badge bg-dark">
-                    Technology
-                </span>
-
-            </div>
-
-
-
-            <!-- Alerts -->
-
-            <div class="component-box">
-
-                <h4>
-                    Bootstrap Alerts
-                </h4>
-
-                <p>
-                    Alerts are used to display important
-                    messages to the user.
-                </p>
-
-
-                <div class="alert alert-primary">
-
-                    BMW is known for its performance
-                    and luxury vehicles.
-
-                </div>
-
-
-                <div
-                    class="alert alert-success alert-dismissible fade show"
-                >
-
-                    Information loaded successfully.
-
-                    <button
-                        class="btn-close"
-                        data-bs-dismiss="alert"
-                    ></button>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- ================= FORM ================= -->
-
-    <section
-        id="form"
-        class="py-5 bg-light"
-    >
-
-        <div class="container">
-
-            <h2 class="text-center section-title">
-                BMW Form Demo
-            </h2>
-
-            <p class="text-center mb-4">
-                Bootstrap forms provide ready-made styling
-                for inputs, select boxes, checkboxes and
-                radio buttons.
+            <p>
+              BMW's September 2026 PressClub photography shows
+              camouflaged next-generation 3 Series development cars
+              being tested at Miramas.
             </p>
 
+            <a
+              class="source-pill"
+              href="https://www.press.bmwgroup.com/global/photo/detail/P90651567"
+              target="_blank">
+              BMW PressClub ↗
+            </a>
 
-            <div class="row justify-content-center">
+          </div>
 
-                <div class="col-md-10 col-lg-8">
+        </article>
 
-                    <div class="component-box">
+      </div>
 
-                        <form>
+    </div>
 
+  </div>
 
-                            <!-- Username -->
+</section>
 
-                            <div class="mb-3">
 
-                                <label
-                                    class="form-label"
-                                    for="username"
-                                >
-                                    Username
-                                </label>
+<!-- ================= FINAL ================= -->
 
-                                <input
-                                    type="text"
-                                    class="form-control"
-                                    placeholder="Enter your username"
-                                    id="username"
-                                >
+<section class="final">
 
-                            </div>
+  <div class="container">
 
+    <div class="eyebrow">
+      1916 → 2026
+    </div>
 
+    <h2 class="final-title mt-4">
+      THE STORY<br>
+      <span>CONTINUES.</span>
+    </h2>
 
-                            <!-- Password -->
+    <p class="story mx-auto mt-5">
+      Engines. Motorcycles. Cars. Motorsport.
+      SUVs. Electric mobility. Neue Klasse.
+    </p>
 
-                            <div class="mb-3">
+  </div>
 
-                                <label
-                                    class="form-label"
-                                    for="password"
-                                >
-                                    Password
-                                </label>
+</section>
 
-                                <input
-                                    type="password"
-                                    class="form-control"
-                                    placeholder="Enter your password"
-                                    id="password"
-                                >
 
-                            </div>
+<footer>
+  <div class="container">
+    BMW — THE EVOLUTION
+    <br>
+    <small>Pexels media is used under its stated free-use license.</small>
+  </div>
+</footer>
 
 
-
-                            <!-- Address -->
-
-                            <div class="mb-3">
-
-                                <label
-                                    class="form-label"
-                                    for="address"
-                                >
-                                    Address
-                                </label>
-
-                                <input
-                                    type="text"
-                                    class="form-control"
-                                    placeholder="Enter your address"
-                                    id="address"
-                                >
-
-                            </div>
-
-
-
-                            <!-- Select -->
-
-                            <div class="mb-3">
-
-                                <label class="form-label">
-                                    Select BMW Category
-                                </label>
-
-                                <select class="form-select">
-
-                                    <option selected>
-                                        Choose a category
-                                    </option>
-
-                                    <option value="1">
-                                        Sedan
-                                    </option>
-
-                                    <option value="2">
-                                        SUV
-                                    </option>
-
-                                    <option value="3">
-                                        Coupe
-                                    </option>
-
-                                </select>
-
-                            </div>
-
-
-
-                            <!-- Checkbox -->
-
-                            <div class="mb-3">
-
-                                <div class="form-check">
-
-                                    <input
-                                        type="checkbox"
-                                        class="form-check-input"
-                                        id="agree"
-                                    >
-
-                                    <label
-                                        class="form-check-label"
-                                        for="agree"
-                                    >
-                                        I am interested in BMW cars
-                                    </label>
-
-                                </div>
-
-                            </div>
-
-
-
-                            <!-- Radio Buttons -->
-
-                            <div class="mb-4">
-
-                                <label class="form-label">
-                                    Preferred BMW Type
-                                </label>
-
-
-                                <div class="form-check">
-
-                                    <input
-                                        type="radio"
-                                        class="form-check-input"
-                                        name="carType"
-                                        id="petrol"
-                                    >
-
-                                    <label
-                                        class="form-check-label"
-                                        for="petrol"
-                                    >
-                                        Petrol
-                                    </label>
-
-                                </div>
-
-
-                                <div class="form-check">
-
-                                    <input
-                                        type="radio"
-                                        class="form-check-input"
-                                        name="carType"
-                                        id="electric"
-                                    >
-
-                                    <label
-                                        class="form-check-label"
-                                        for="electric"
-                                    >
-                                        Electric
-                                    </label>
-
-                                </div>
-
-                            </div>
-
-
-
-                            <!-- Submit -->
-
-                            <button
-                                type="submit"
-                                class="btn btn-primary px-4"
-                            >
-                                Submit
-                            </button>
-
-                        </form>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- ================= FOOTER ================= -->
-
-    <footer class="bg-dark text-white text-center py-4">
-
-        <div class="container">
-
-            <h5 class="mb-2">
-                BMW
-            </h5>
-
-            <p class="mb-0">
-                Bootstrap CSS Practice Website
-            </p>
-
-        </div>
-
-    </footer>
-
-
-
-    <!-- Bootstrap JavaScript -->
-
-    <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
-    </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
-
 </html>
