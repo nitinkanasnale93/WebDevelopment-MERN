@@ -47,12 +47,48 @@
 // }
 
 // avg(3, 3, 3);
-function printTable(n) {
+// function printTable(n) {
 
-    for(let i = 1; i <= 10; i++) {
-        console.log(n * i);
-    }
+//     for(let i = 1; i <= 10; i++) {
+//         console.log(n * i);
+//     }
 
-}
+// }
 
-printTable(2);
+// printTable(2);
+
+// function sum(a, b) {
+//     return a + b;
+// }
+
+// console.log(sum(1, 2)); // Prints 3
+
+// function sumofn(n) {
+//     let sum = 0;
+
+//     for (let i = 1; i <= n; i++) {
+//         sum += i;
+//     }
+
+//     console.log(sum);
+// }
+
+// sumofn(Number(prompt("Enter a number")));
+
+// let str = ["Hello", "World", "This", "is", "a", "test"];
+
+// function concat(str) {
+//     let result = "";
+//     for(let i = 0; i < str.length; i++) {
+//         result = result + str[i] + " ";
+//     }
+//     return result;
+// }
+
+// console.log(concat(str));
+
+// Scope:
+// Global Scope
+// function scope 
+// block scope
+// lexical scope
